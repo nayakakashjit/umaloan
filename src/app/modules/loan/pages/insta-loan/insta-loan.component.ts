@@ -25,4 +25,9 @@ export class InstaLoanComponent implements OnInit {
     return this.enquiryForm.controls;
   }
 
+  ngOnInit() {
+    console.log('instaloan');
+    
+  }
+
 }
