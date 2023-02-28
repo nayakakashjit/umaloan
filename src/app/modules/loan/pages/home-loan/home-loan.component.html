@@ -1,0 +1,255 @@
+<div class="container-fluid m-p-0">
+  <div class="sec-banner" [ngStyle]="{'background' : 'url(assets/images/homeloan/bg-homeloan-desktop.jpg)'}">
+    <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <h1>Home Loan</h1>
+      <h3>Rate of Interest 8.65%</h3>
+      <p>* Terms & Conditions Apply</p>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="loanPanel">
+    <p class="l-header">Home Loan Enquiry</p>
+    <p class="l-header-hint">Please be specific of the enquiry you want to submit in this Enquiry Form, so we can return to you
+      <br>fast with the information you are looking for. Thank you!</p>
+    <form name="form"  [formGroup]="enquiryForm" (keyup.enter)="enquiry()">
+      <div class="row">
+          <div class="col-xl-6">
+              <div class="i-login">
+                  <p class="label">User Name</p>
+                  <div class="i-panel">
+                      <input class="input-effect" type="text" placeholder="" formControlName="name">
+                      <span class="focus-border"><i></i></span>
+                  </div>
+                  <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="error">
+                      <div [hidden]="!f.name.errors.required">User Name is required<small>*</small></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-6">
+              <div class="i-login">
+                  <p class="label">Email ID</p>
+                  <div class="i-panel">
+                      <input class="input-effect" type="text" placeholder="" formControlName="email">
+                      <span class="focus-border"><i></i></span>
+                  </div>
+                  <div *ngIf="(submitted || f.email.touched) && f.email.errors" class="error">
+                      <div [hidden]="!f.email.errors.required">Email is required<small>*</small></div>
+                      <div [hidden]="!f.email.errors.email">Email must be a valid email Address.</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Mobile Number</p>
+            <div class="i-panel">
+                <input class="input-effect" type="number" formControlName="phone">
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.phone.touched) && f.phone.errors" class="error">
+                <div [hidden]="!f.phone.errors.required">Phone is required<small>*</small></div>
+                <div [hidden]="!f.phone.errors.pattern">Phone number not valid.</div>
+            </div>
+        </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Resident Type</p>
+            <div class="i-panel">
+                <select class="form-control drop-d input-effect" formControlName="super_course_id">
+                    <!-- <option  *ngFor="let list of dropDownList; let i = index" value="{{list.id}}">{{list.name}}</option> -->
+                    <option  value="ri" selected>Resident Indian</option>
+                    <option  value="nri">Non Resident Indian</option>
+                </select>
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.super_course_id.touched) && f.super_course_id.errors" class="error">
+                <div [hidden]="!f.super_course_id.errors.required">select your Resident Type<small>*</small></div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+      <div class="row">
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Property State</p>
+              <div class="i-panel">
+                  <select class="form-control drop-d input-effect" (change)="changeCountry($event.target.value)" formControlName="property_state">
+                      <!-- <option  *ngFor="let list of propertyState; let i = index" value="{{list.id}}">{{list.name}}</option> -->
+                      <option  *ngFor ="let count of countryList">{{count.name}}  </option>
+                  </select>
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.property_state.touched) && f.property_state.errors" class="error">
+                  <div [hidden]="!f.property_state.errors.required">select Property State<small>*</small></div>
+              </div>
+          </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Property City</p>
+              <div class="i-panel">
+                  <select class="form-control drop-d input-effect" formControlName="property_city">
+                      <!-- <option  *ngFor="let list of propertyList; let i = index" value="{{list.id}}">{{list.name}}</option> -->
+                      <option *ngFor ="let city of cities">{{city}} </option>
+                  </select>
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.property_city.touched) && f.property_city.errors" class="error">
+                  <div [hidden]="!f.property_city.errors.required">select Property City<small>*</small></div>
+              </div>
+          </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Request Type</p>
+            <div class="i-panel">
+                <select class="form-control drop-d input-effect" formControlName="reuest_type">
+                    <!-- <option  *ngFor="let list of propertyList; let i = index" value="{{list.id}}">{{list.name}}</option> -->
+                </select>
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.reuest_type.touched) && f.reuest_type.errors" class="error">
+                <div [hidden]="!f.reuest_type.errors.required">select Property City<small>*</small></div>
+            </div>
+        </div>
+        </div>
+        <div class="col-xl-6">
+          <br>
+          <br>
+          <p class="l-header-hint">Do you want to be contacted by whatsApp?
+            <span class="float-right">
+                <label class="pure-material-radio">
+                    <input type="radio" checked="checked" formControlName="via_phone" name="via_phone" value='yes'>
+                    <span>Yes</span>
+            </label>
+        
+            <label class="pure-material-radio">
+                    <input type="radio" name="via_phone" formControlName="via_phone" value="no">
+                    <span>No</span>
+                </label>
+            </span>
+        </p><br>
+        <div class="l-button text-right">
+          <button type="button" class="btn btn-success ripple" (click)="enquiry()">Submit <i class="fas fa-paper-plane"></i></button>
+      </div>
+        </div>
+        </div>
+  </form>
+</div>
+  </div>
+  <div class="col-md-2"></div>
+
+</div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <p class="l-header">Best Home Loan Offers from Top Banks/NBFCs</p>
+    <table class="rwd-table">
+      <tbody>
+        <tr>
+          <th>Banks/NBFC</th>
+          <th>Institution Type</th>
+          <th>Minimum Loan Amount</th>
+          <th>Maximum  Loan Amount</th>
+          <th>Minimum Tenure </th>
+          <th>Maximum Tenure</th>
+          <th>Interest Rates</th>
+          <th>Interest Rates</th>
+        </tr>
+        <tr>
+          <td data-th="Banks/NBFC">
+            Axis Bank
+          </td>
+          <td data-th="Institution Type">
+            BANK
+          </td>
+          <td data-th="Minimum Loan Amount">
+            ₹3,00,000
+          </td>
+          <td data-th="Maximum  Loan Amount">
+            ₹500,00,000
+          </td>
+          <td data-th="Minimum Tenure">
+            1 Year
+          </td>
+          <td data-th="Maximum Tenure">
+            30 years
+          </td>
+          <td data-th="Interest Rates">
+            6.90%  - 8.55%
+          </td>
+          <td data-th="Interest Rates">
+            Up to 1% (min of ₹10,000) + GST  as applicable
+          </td>
+        </tr>
+        <tr>
+          <td data-th="Banks/NBFC">
+            Axis Bank
+          </td>
+          <td data-th="Institution Type">
+            BANK
+          </td>
+          <td data-th="Minimum Loan Amount">
+            ₹3,00,000
+          </td>
+          <td data-th="Maximum  Loan Amount">
+            ₹500,00,000
+          </td>
+          <td data-th="Minimum Tenure">
+            1 Year
+          </td>
+          <td data-th="Maximum Tenure">
+            30 years
+          </td>
+          <td data-th="Interest Rates">
+            6.90%  - 8.55%
+          </td>
+          <td data-th="Interest Rates">
+            Up to 1% (min of ₹10,000) + GST  as applicable
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="quick-link-container">
+      <div class="quick-link">
+        <div class="background"></div>
+        <a href="#">Transparency</a>
+      </div>
+      <div class="quick-link">
+        <div class="background"></div>
+        <a href="#">Excellence</a>
+      </div>
+      <div class="quick-link">
+        <div class="background"></div>
+        <a href="#">Integrity</a>
+      </div>
+      <div class="quick-link">
+        <div class="background"></div>
+        <a href="#">Trust</a>
+      </div>
+    
+      <div class="quick-link">
+        <div class="background"></div>
+        <a href="#">No hidden costs</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

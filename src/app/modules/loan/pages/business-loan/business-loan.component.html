@@ -1,0 +1,257 @@
+<div class="container-fluid m-p-0">
+  <div class="sec-banner" [ngStyle]="{'background' : 'url(assets/images/homeloan/bg-homeloan-desktop.jpg)'}">
+    <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <h1>business Loan</h1>
+      <h3>Rate of Interest 8.65%</h3>
+      <p>* Terms & Conditions Apply</p>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+
+<div class="row container">
+  <div class="col-md-8">
+    <div class="loanPanel">
+    <p class="l-header">Get a loan for Business in just 48 hours</p>
+    <p class="l-header-hint">Please be specific of the enquiry you want to submit in this Enquiry Form, so we can return to you
+      <br>fast with the information you are looking for. Thank you!</p>
+    <form name="form"  [formGroup]="enquiryForm" (keyup.enter)="enquiry()">
+      <div class="row">
+          <div class="col-xl-6">
+              <div class="i-login">
+                  <p class="label">Full Name </p>
+                  <div class="i-panel">
+                      <input class="input-effect" type="text" placeholder="" formControlName="name">
+                      <span class="focus-border"><i></i></span>
+                  </div>
+                  <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="error">
+                      <div [hidden]="!f.name.errors.required">Name is required<small>*</small></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-6">
+              <div class="i-login">
+                  <p class="label">Email ID</p>
+                  <div class="i-panel">
+                      <input class="input-effect" type="text" placeholder="" formControlName="email">
+                      <span class="focus-border"><i></i></span>
+                  </div>
+                  <div *ngIf="(submitted || f.email.touched) && f.email.errors" class="error">
+                      <div [hidden]="!f.email.errors.required">Email is required<small>*</small></div>
+                      <div [hidden]="!f.email.errors.email">Email must be a valid email Address.</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Mobile Number</p>
+            <div class="i-panel">
+                <input class="input-effect" type="number" formControlName="phone">
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.phone.touched) && f.phone.errors" class="error">
+                <div [hidden]="!f.phone.errors.required">Phone is required<small>*</small></div>
+                <div [hidden]="!f.phone.errors.pattern">Phone number not valid.</div>
+            </div>
+        </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Type Of Employment</p>
+            <div class="i-panel">
+                <select class="form-control drop-d input-effect" formControlName="super_course_id">
+                  <option value="">Select</option>
+                    <option  value="ri" selected>Self-Employed</option>
+                    <option  value="nri">Salaried</option>
+                </select>
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.super_course_id.touched) && f.super_course_id.errors" class="error">
+                <div [hidden]="!f.super_course_id.errors.required">select Type Of Employment<small>*</small></div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+      <div class="row">
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Number Of Years In Operation</p>
+              <div class="i-panel">
+                  <select class="form-control drop-d input-effect" (change)="changeCountry($event.target.value)" formControlName="property_state">
+                    <option value="">Select</option>
+                      <option  value="0-1">0 to 1 year</option>
+                      <option  value="1-2">1 to 2 year</option>
+                      <option  value="2-3">2 to 3 year</option>
+                      <option  value="3+">More than 3 years</option>
+                  </select>
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.property_state.touched) && f.property_state.errors" class="error">
+                  <div [hidden]="!f.property_state.errors.required">select Years In Operation<small>*</small></div>
+              </div>
+          </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Business Turnover</p>
+              <div class="i-panel">
+                  <select class="form-control drop-d input-effect" formControlName="property_city">
+                  <option value="">Select</option>
+                  <option value="0 - 25 Lakhs">0 - 25 Lakhs </option>
+                  <option value="25 lakhs - 50 lakhs">25 lakhs - 50 lakhs </option>
+                  <option value="50 lakhs to 1 Cr">50 lakhs to 1 Cr </option>
+                  <option value="1 Cr and above">1 Cr and above</option>
+                  </select>
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.property_city.touched) && f.property_city.errors" class="error">
+                  <div [hidden]="!f.property_city.errors.required">select Business Turnover<small>*</small></div>
+              </div>
+          </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Current Account (Y/N)</p>
+            <div class="i-panel">
+                <select class="form-control drop-d input-effect" formControlName="reuest_type">
+                  <option value="">Select</option>
+                  <option value="yes">Yes </option>
+                  <option value="No">No</option>
+                </select>
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.reuest_type.touched) && f.reuest_type.errors" class="error">
+                <div [hidden]="!f.reuest_type.errors.required">select Y/N<small>*</small></div>
+            </div>
+        </div>
+        </div>
+        <div class="col-xl-6">
+          <br>
+          <br>
+          <p class="l-header-hint">GST Active ?
+            <span class="float-right">
+                <label class="pure-material-radio">
+                    <input type="radio" checked="checked" formControlName="via_phone" name="via_phone" value='yes'>
+                    <span>Yes</span>
+            </label>
+        
+            <label class="pure-material-radio">
+                    <input type="radio" name="via_phone" formControlName="via_phone" value="no">
+                    <span>No</span>
+                </label>
+            </span>
+        </p><br>
+        <div class="l-button text-right">
+          <button type="button" class="btn btn-success ripple" (click)="enquiry()">Submit <i class="fas fa-paper-plane"></i></button>
+      </div>
+        </div>
+        </div>
+  </form>
+</div>
+  </div>
+  <div class="col-md-4">
+    <div class="row ">
+      <div class="accordion" id="accordionPadholeekho">
+      <div class="card">
+        <div class="card-head" id="headingOne">
+            <h2 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Features and Benefits
+            </h2>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionPadholeekho">
+            <div class="card-body">
+              <p> Offer Amount: Hassle free loans up to Rs. 50 lakh</p>
+              <p> No collateral or guarantor needed</p> 
+              <p> Flexi loan facility</p> 
+              <p> Minimal documentation</p>
+              <p> Online account access</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+      <div class="card-head" id="headingTwo">
+          <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Features and Benefits
+          </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionPadholeekho">
+          <div class="card-body">
+            <p> Offer Amount: Hassle free loans up to Rs. 50 lakh</p>
+            <p> No collateral or guarantor needed</p> 
+            <p> Flexi loan facility</p> 
+            <p> Minimal documentation</p>
+            <p> Online account access</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head" id="headingThree">
+        <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Features and Benefits
+        </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionPadholeekho">
+        <div class="card-body">
+          <p> Offer Amount: Hassle free loans up to Rs. 50 lakh</p>
+          <p> No collateral or guarantor needed</p> 
+          <p> Flexi loan facility</p> 
+          <p> Minimal documentation</p>
+          <p> Online account access</p>
+        </div>
+    </div>
+</div>
+  </div>
+      </div>
+  </div>
+
+</div>
+<br>
+<!-- <div class="row register-bg" [ngStyle]="{'background' : 'url(assets/images/businessloan/BG3.png)'}"> -->
+  <div class="arrow-section">
+    <h2 class="">How does it work?</h2>
+    <div class="arrow-area">
+      <!--single arrow-->
+      <div class="single-arrow">
+        <div class="arrow-num">1</div>
+        <div class="arrow-content">
+          <h3>Fill in the application</h3>
+          <p>Enter your personal and business-related details in the application form.</p>
+        </div>
+        </div>
+        <!--single arrow-->
+      <div class="single-arrow">
+        <div class="arrow-num">2</div>
+        <div class="arrow-content">
+          <h3>Share your documents</h3>
+          <p>Share your bank statements for the last 6 months.</p>
+        </div>
+        </div>
+        <!--single arrow-->
+      <div class="single-arrow">
+        <div class="arrow-num">3</div>
+        <div class="arrow-content">
+          <h3>Get a call from our representative</h3>
+          <p>Our representative will get in touch with you within 24 hours.</p>
+        </div>
+        </div>
+        <!--single arrow-->
+      <div class="single-arrow">
+        <div class="arrow-num">4</div>
+        <div class="arrow-content">
+          <h3>Get your loan amount in just 48 hours</h3>
+          <p>On meeting our eligibility criteria, the loan amount will be transferred to your bank account.</p>
+        </div>
+        </div>
+     </div>
+      </div>
+<!-- </div> -->
+</div>

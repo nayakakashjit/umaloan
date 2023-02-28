@@ -1,0 +1,69 @@
+<header class="main-header">
+  <nav class="navbar-top navbar">
+      <a routerLink="/home" class="logo">
+          <img src="../../../assets/images/Logo/logo.jpeg" class="img-fluid" alt="Logo">
+      </a>
+      <!-- <form class="search-form xs-hidden">
+          <input type="text" class="textbox" placeholder="Search">
+          <button title="Search" value="" type="submit" class="button">
+              <i class="fas fa-search"></i>
+          </button>
+      </form> -->
+      <ul class="navbar-btn-login">
+          <li>
+            <p><i class="fas fa-map-marker-alt footer-fa"></i> 4th Cross, 1st Main Rd, Talacauvery
+                Layout, <br> Basavanagara, Bengaluru, Karnataka 560037</p>
+            </li>
+          <li>
+            <p><i class="fas fa-envelope footer-fa"></i> enquiry@vfs.com <br><i class="fas fa-mobile footer-fa"></i>+91 9916 124 600</p>
+          </li>
+      </ul>
+  </nav>
+</header>
+<ul class="exo-menu" [ngClass]="{'display': toggleValue}">
+  <li>
+      <a routerLink="/loan/home-loan" class="active"><i class="fa fa-home"></i> Home Loans</a>
+  </li>
+  <!-- <li class="mega-drop-down">
+      <a><i class="fa fa-laptop"></i> Competitive Exam &#9660;</a>
+      <div class="animated fadeIn mega-menu">
+          <div class="mega-menu-wrap">
+              <div class="row">
+                  <ul>
+                      <li *ngFor="let item of menudata; let i = index" (click)="goDetailsPage(item.id)" class="mega-title">{{item.name}}</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </li> -->
+  <li>
+      <a routerLink="/loan/personal-loan">
+          <i class="fa fa-info-circle"></i> Personal Loans
+      </a>
+  </li>
+  <li>
+      <a routerLink="/loan/business-loan">
+          <i class="fa fa-list-alt"></i> Business Loans
+      </a>
+  </li>
+  <li>
+      <a routerLink="/loan/insta-loan">
+          <i class="fa fa-phone-square"></i> Insta Loans
+      </a>
+  </li>
+  <!-- <li class="float-right">
+      <a routerLink="/auth/cart/emptyCart">
+          <i class="fas fa-shopping-cart"></i> Cart
+      </a>
+  </li>
+  <li class="float-right">
+      <a routerLink="/auth/wishlist/emptyWishList">
+          <i class="far fa-heart"></i> Wishlist
+      </a>
+  </li> -->
+  <a id="nav-toggle" class="nav-toggle" [ngClass]="{'active': toggleValue}"><span class="span-toggle" (click)="toggle()"></span></a>
+  <a id="demo-2">
+      <input type="search" placeholder="Search">
+  </a>
+</ul>
+<router-outlet></router-outlet>

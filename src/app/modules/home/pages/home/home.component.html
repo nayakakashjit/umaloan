@@ -1,0 +1,218 @@
+<div class="container-fluid">
+  <div class="row sec-1" style="margin-top: 58px;">
+     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+        <ol class="carousel-indicators">
+           <li data-target="#carouselExampleFade" *ngFor="let li of banners; let i = index"
+           [attr.data-slide-to]="i" [ngClass]="i == 0 ? 'active':''"></li>
+        </ol>
+        <div class="carousel-inner">
+           <div *ngFor="let image of banners; let k = index"
+           [ngClass]="k == 0 ? 'carousel-item active':'carousel-item'">
+           <img class="d-block w-100" src="{{image.image}}" [alt]=image.alt>
+        </div>
+     </div>
+     <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+     <span class="sr-only">Previous</span>
+     </a>
+     <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <span class="sr-only">Next</span>
+     </a>
+  </div>
+</div>
+<div class="row sec-2">
+   <div class="col-md-2"></div>
+   <div class="col-md-8">
+      <app-search></app-search>
+   </div>
+   <div class="col-md-2"></div>
+</div>
+<div class="row sec-8">
+  <div class="col-xl-12">
+     <h2 class="text-center">How It Works</h2>
+  </div>
+  <div class="col-xl-6">
+     <div class="sec-8-card">
+        <div class="sec-8-card-icon">
+           <img class="img1" src="assets/images/home/applyOnline.png">
+        </div>
+        <div class="sec-8-card-text">
+           <h4>APPLY</h4>
+           <p>Choose Suitable Loan Offers using our smart Search feature and apply.</p>
+        </div>
+     </div>
+  </div>
+  <div class="col-xl-6">
+     <div class="sec-8-card">
+        <div class="sec-8-card-icon">
+           <img class="img2" src="assets/images/home/getAdvice.png">
+        </div>
+        <div class="sec-8-card-text">
+           <h4>GET ADVICE</h4>
+           <p>Advisory service from VFS to find best Suitable Loan Offers</p>
+        </div>
+     </div>
+  </div>
+  <div class="col-xl-6">
+     <div class="sec-8-card">
+        <div class="sec-8-card-icon">
+           <img class="img3" src="assets/images/home/paperwork.png">
+        </div>
+        <div class="sec-8-card-text">
+           <h4>PAPERWORK HELP</h4>
+           <p>Documentation Assistance and application of loan. </p>
+        </div>
+     </div>
+  </div>
+  <div class="col-xl-6">
+     <div class="sec-8-card">
+        <div class="sec-8-card-icon">
+           <img class="img4" src="assets/images/home/loanDisbursal.png">
+        </div>
+        <div class="sec-8-card-text">
+           <h4>Loan Disbursal</h4>
+           <p>Signing of loan agreements and coordinating fund transfer</p>
+        </div>
+     </div>
+  </div>
+</div>
+<div class="row search-sec">
+   <!-- <div class="col-md-2"></div>
+   <div class="col-md-8">
+      <app-search></app-search>
+   </div>
+   <div class="col-md-2"></div> -->
+   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+      <div class="sec-2-card">
+         <div class="sec-2-card-icon">
+            <i class="fa fa-home"></i>
+         </div>
+         <div class="sec-2-card-text">
+            <h4>10,000 Crore Loans</h4>
+         </div>
+      </div>
+   </div>
+   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+      <div class="sec-2-card">
+         <div class="sec-2-card-icon">
+            <i class="fa fa-map-marker"></i>
+         </div>
+         <div class="sec-2-card-text">
+            <h4>300+ Cities</h4>
+         </div>
+      </div>
+   </div>
+   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+      <div class="sec-2-card">
+         <div class="sec-2-card-icon">
+            <i class="fa fa-users"></i>
+         </div>
+         <div class="sec-2-card-text">
+            <h4>20,00,000+ Customers</h4>
+         </div>
+      </div>
+   </div>
+   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+      <div class="sec-2-card">
+         <div class="sec-2-card-icon">
+            <i class="fa fa-university"></i>
+         </div>
+         <div class="sec-2-card-text">
+            <h4>75+ Banks / NBFC's</h4>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="container-fluid sec-4 sec-4-banner" [ngStyle]="{'background' : 'url(assets/images/home/BG.jpg)'}">
+  <h2 class="text-center">OUR CUSTOMERS LOVE</h2>
+  <p class="text-center">Our picks for the hottest offers and coolest deals all in one place</p>
+  <br>
+  <div class="row ">
+     <!-- <button type="button" (click)="readMore()" class="btn btn-success ripple">Read More...</button>  -->
+     <div class="col-md-4 m-p-0">
+        <div class="combo-offer">
+           <div class="combo-grid">
+              <div class="combo-sec-1">
+                 <div class="card c-offer-card">
+                    <div class="card-img-block">
+                       <img class="card-img-top" src="../../../../../assets/images/home/instaloan.png" alt="Card image cap">
+                       <p class="trans-t">Disbursal <b>24 Hours</b></p>
+                    </div>
+                    <div class="card-body m-p-0 ">
+                       <h2>Insta Loan</h2>
+                       <div class="row">
+                          <div class="col-sm-12">
+                             <div class="ratting-star">
+                                <span>4</span>
+                                <span>
+                                <i class="fas fa-star"></i> (932)
+                                </span>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="col-md-4 m-p-0">
+        <div class="combo-offer">
+           <div class="combo-grid">
+              <div class="combo-sec-1">
+                 <div class="card c-offer-card">
+                    <div class="card-img-block">
+                       <img class="card-img-top" src="../../../../../assets/images/home/hdfcPersonalLoan.png" alt="Card image cap">
+                       <p class="trans-t">Interest Rates starting @15.5%</p>
+                    </div>
+                    <div class="card-body m-p-0 ">
+                       <h2>HDFC PERSONAL LOAN</h2>
+                       <div class="row">
+                          <div class="col-sm-12">
+                             <div class="ratting-star">
+                                <span>4.2</span>
+                                <span>
+                                <i class="fas fa-star"></i> (932)
+                                </span>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="col-md-4 m-p-0">
+        <div class="combo-offer">
+           <div class="combo-grid">
+              <div class="combo-sec-1">
+                 <div class="card c-offer-card">
+                    <div class="card-img-block">
+                       <img class="card-img-top" src="../../../../../assets/images/home/sbiHomeLoan.png" alt="Card image cap">
+                       <p class="trans-t">Credit Line up to ₹500,000</p>
+                    </div>
+                    <div class="card-body m-p-0 ">
+                       <h2>PERSONAL LINE OF CREDIT</h2>
+                       <div class="row">
+                          <div class="col-sm-12">
+                             <div class="ratting-star">
+                                <span>4.5</span>
+                                <span>
+                                <i class="fas fa-star"></i> (932)
+                                </span>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+<br>
+<app-partners></app-partners>
+</div>

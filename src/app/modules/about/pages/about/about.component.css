@@ -1,0 +1,45 @@
+.m-p-0 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.banner {
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+
+.accordion {
+    margin-top: 40px;
+}
+
+.accordion .card {
+    border: none;
+    margin-bottom: 15px;
+}
+
+.accordion .card h2 {
+    background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
+    background-size: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #a7dca742;
+    padding: 15px;
+    font-weight: 400;
+}
+
+.card-body p {
+    color: rgba(85, 85, 85, 0.819607843137255);
+    text-align: justify;
+}
+
+.accordion .card h2.collapsed {
+    background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
+}
+
+.accordion .card-body {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {}

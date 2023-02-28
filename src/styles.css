@@ -1,0 +1,396 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+/* @import '~@angular/material/prebuilt-themes/indigo-pink.css'; */
+
+/* Prevent text selection of a <body> element in all major browsers */
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+
+/*  Radio Button Start  */
+
+.pure-material-radio {
+    z-index: 0;
+    position: relative;
+    display: inline-block;
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* Input */
+
+.pure-material-radio>input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    z-index: -1;
+    position: absolute;
+    left: -10px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+
+/* Span */
+
+.pure-material-radio>span {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+
+/* Circle */
+
+.pure-material-radio>span::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 2px 4px 2px 0;
+    border: solid 2px;
+    /* Safari */
+    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    transition: border-color 0.2s;
+}
+
+
+/* Check */
+
+.pure-material-radio>span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #268b45;
+    transform: translate(5px, 5px) scale(0);
+    transition: transform 0.2s;
+}
+
+
+/* Checked */
+
+.pure-material-radio>input:checked {
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.pure-material-radio>input:checked+span::before {
+    border-color: #268b45;
+}
+
+.pure-material-radio>input:checked+span::after {
+    transform: translate(5px, 5px) scale(1);
+}
+
+
+/* Hover, Focus */
+
+.pure-material-radio:hover>input {
+    opacity: 0.04;
+}
+
+.pure-material-radio>input:focus {
+    opacity: 0.12;
+}
+
+.pure-material-radio:hover>input:focus {
+    opacity: 0.16;
+}
+
+
+/* Active */
+
+.pure-material-radio>input:active {
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0s, opacity 0s;
+}
+
+.pure-material-radio>input:active+span::before {
+    border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+
+/* Disabled */
+
+.pure-material-radio>input:disabled {
+    opacity: 0;
+}
+
+.pure-material-radio>input:disabled+span {
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    cursor: initial;
+}
+
+.pure-material-radio>input:disabled+span::before {
+    border-color: currentColor;
+}
+
+.pure-material-radio>input:disabled+span::after {
+    background-color: currentColor;
+}
+
+
+/*  Radio Button End */
+
+
+/* Text area Background Color start */
+
+textarea.form-control {
+    height: auto;
+    background-color: #f6f9f7;
+    border: none;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #f6f9f7;
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}
+
+
+/*  Text area Background Color End */
+
+
+/*  Button ripple Effect Start */
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple:before {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+}
+
+.ripple:focus:before {
+    transition: all 0.5s ease-out;
+    opacity: 0;
+    width: 160px;
+    height: 160px;
+    margin-top: -80px;
+    margin-left: -80px;
+}
+
+
+/* Button ripple Effect End */
+
+
+/* Remove focus form all buttons start */
+
+.form-control:focus {
+    border: 1px solid #00a65a;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-success.focus,
+.btn-success:focus {
+    box-shadow: transparent;
+    box-shadow: none;
+}
+
+
+/*  Remove focus form all buttons End */
+
+
+/* Error Message  */
+
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin: -18px 0 0 12px;
+    font-size: 80%;
+    color: #dc3545;
+}
+
+
+/*  Error Message  */
+
+
+/*  Corousel  */
+
+.owl-nav button {
+    height: 35px;
+    width: 35px;
+    background: #FFF !important;
+    color: #00a65a !important;
+    margin-right: 20px;
+    position: relative;
+    outline: none;
+    border: 1px solid #00a65a !important;
+    border-radius: 3px !important;
+}
+
+.owl-nav i {
+    font-size: 25px !important;
+    margin-top: 4px;
+}
+
+.owl-nav button:hover {
+    height: 35px;
+    width: 35px;
+    background: #00a65a !important;
+    color: #FFF !important;
+    margin-right: 20px;
+    position: relative;
+    outline: none;
+    border: 1px solid #00a65a !important;
+}
+
+.owl-nav {
+    position: absolute;
+    top: -60px;
+    right: 0px;
+}
+
+.owl-slider {
+    margin-top: 50px;
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel button.owl-dot {
+    border-top-right-radius: 6px !important;
+    border-bottom-right-radius: 6px !important;
+}
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel button.owl-dot {
+    border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    color: #FFF;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 10px;
+    background: #D6D6D6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
+/* Validation */
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+
+/* Alert */
+
+.alert-message {
+    margin: 20px 0;
+    padding: 15px 10px 1px 10px;
+    border-left: 3px solid #eee;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0px;
+}
+
+.alert-message h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.alert-message-success {
+    background-color: #F4FDF0;
+    border-color: #3C763D;
+    text-align: center;
+}
+
+.alert-message-success h4 {
+    color: #3C763D;
+    font-size: 16px;
+}
+
+.alert-dismissible .close {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    padding: .75rem 1.25rem;
+    color: inherit;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+    background-color: #084951;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #4dcb44;
+    outline: 1px solid red;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #595c5b;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4dcb44;
+    outline: 1px solid red;
+}
+
+
+/* Remove spinner form input box */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}

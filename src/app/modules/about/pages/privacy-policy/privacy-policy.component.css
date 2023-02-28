@@ -1,0 +1,29 @@
+.m-p-0 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.banner {
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+
+.para-pad {
+    padding: 30px 80px;
+}
+
+.para-pad p {
+    color: rgba(85, 85, 85, 0.819607843137255);
+    text-align: justify;
+}
+
+li {
+    color: rgba(85, 85, 85, 0.819607843137255);
+}
+
+@media only screen and (max-width: 480px) {
+    .para-pad {
+        padding: 0px;
+    }
+}

@@ -1,0 +1,30 @@
+.m-p-0 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sec-banner {
+    background-size: cover !important;
+    background-size: 100% 100% !important;
+    margin-top: 58px;
+    height: 250px;
+}
+
+h1 {
+    text-transform: capitalize;
+    margin-top: 42px;
+    background-image: linear-gradient(to right top, #00a65a, #00a65a, #3e7059, #ff554d, #eb1267);
+    background-size: 50% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 6vw;
+    animation: gradientAnim 7.5s ease  alternate infinite;  
+  }
+  
+  
+  @keyframes gradientAnim {
+    to {
+      background-position: 100% top;
+    }
+  }
