@@ -919,3 +919,7 @@ select {
         background-position: top right !important;
     }
 }
+
+.emi-box {
+    padding: 30px 30px 30px 30px;
+}

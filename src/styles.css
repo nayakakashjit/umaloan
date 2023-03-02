@@ -394,3 +394,7 @@ input[type=number] {
     -moz-appearance: textfield;
     /* Firefox */
 }
+
+.emi-box {
+    padding: 30px 30px 30px 30px;
+}

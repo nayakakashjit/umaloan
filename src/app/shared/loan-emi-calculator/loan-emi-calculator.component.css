@@ -1,0 +1,110 @@
+.left-title{
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+}
+.result{
+    font-size: 16px;
+    font-weight: 600;
+}
+h5,h6{
+    color: gray;
+}
+.active{
+    background-color: lightgray;
+}
+
+h1{
+    font-size: 35px;
+    color: gray;
+}
+@media only screen and (max-width: 768px) {
+    h1{
+        font-size: 15px;
+        color: gray;
+    }
+   
+}
+@media only screen and (min-width: 992px) {
+    h1{
+        font-size: 35px;
+        margin-bottom: -20px;   
+    }
+}
+
+::ng-deep .ng5-slider .ng5-slider-pointer {
+    background-color: #00a65aeb !important;
+}
+
+/* form style */
+input[type="text"] {
+    font: 15px/24px 'Roboto', sans-serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    background-color: #eaf1ec;
+    height: 43px;
+  }
+  
+  .input-effect {
+    border: 1px solid transparent;
+    padding: 9px 12px;
+    transition: 0.4s;
+    border-radius: 4px;
+  }
+  
+  .input-effect~.focus-border:before,
+  .input-effect~.focus-border:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #66bb6a;
+    transition: 0.4s;
+  }
+  
+  .input-effect~.focus-border:after {
+    top: auto;
+    bottom: 0;
+  }
+  
+  .input-effect~.focus-border i:before,
+  .input-effect~.focus-border i:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background-color: #66bb6a;
+    transition: 0.6s;
+  }
+  
+  .input-effect~.focus-border i:after {
+    left: auto;
+    right: 0;
+  }
+  
+  .input-effect:focus~.focus-border:before,
+  .input-effect:focus~.focus-border:after {
+    left: 0;
+    width: 100%;
+    transition: 0.4s;
+  }
+  
+  .input-effect:focus~.focus-border i:before,
+  .input-effect:focus~.focus-border i:after {
+    top: 0;
+    height: 100%;
+    transition: 0.6s;
+  }
+/* from style end */
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #00a65a !important;
+    border-color: #00a65a !important;
+}

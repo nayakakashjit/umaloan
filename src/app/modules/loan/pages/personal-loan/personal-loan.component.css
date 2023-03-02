@@ -11,16 +11,16 @@
 }
 
 h1 {
-    text-transform: capitalize;
-    margin-top: 42px;
-    background-image: linear-gradient(to right top, #00a65a, #00a65a, #3e7059, #ff554d, #eb1267);
-    background-size: 50% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: 'Poppins', sans-serif;
-    font-size: 6vw;
-    animation: gradientAnim 7.5s ease  alternate infinite;  
-  }
+  text-transform: capitalize;
+  margin-top: 42px;
+  background-image: linear-gradient(to right top, #00a65a, #00a65a, #3e7059, #ff554d, #eb1267);
+  background-size: 50% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 4vw;
+  animation: gradientAnim 7.5s ease  alternate infinite;  
+}
   
   
   @keyframes gradientAnim {

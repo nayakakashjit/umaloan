@@ -7,13 +7,15 @@ import { PersonalLoanComponent } from './pages/personal-loan/personal-loan.compo
 import { BusinessLoanComponent } from './pages/business-loan/business-loan.component';
 import { InstaLoanComponent } from './pages/insta-loan/insta-loan.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [HomeLoanComponent, PersonalLoanComponent, BusinessLoanComponent, InstaLoanComponent],
   imports: [
     CommonModule,
     LoanRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class LoanModule { }
