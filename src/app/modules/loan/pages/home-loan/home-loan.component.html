@@ -63,15 +63,15 @@
           <div class="i-login">
             <p class="label">Resident Type</p>
             <div class="i-panel">
-                <select class="form-control drop-d input-effect" formControlName="super_course_id">
-                    <!-- <option  *ngFor="let list of dropDownList; let i = index" value="{{list.id}}">{{list.name}}</option> -->
+                <select class="form-control drop-d input-effect" formControlName="resident_type">
+                  <option value="">Select</option>
                     <option  value="ri" selected>Resident Indian</option>
                     <option  value="nri">Non Resident Indian</option>
                 </select>
                 <span class="focus-border"><i></i></span>
             </div>
-            <div *ngIf="(submitted || f.super_course_id.touched) && f.super_course_id.errors" class="error">
-                <div [hidden]="!f.super_course_id.errors.required">select your Resident Type<small>*</small></div>
+            <div *ngIf="(submitted || f.resident_type.touched) && f.resident_type.errors" class="error">
+                <div [hidden]="!f.resident_type.errors.required">select your Resident Type<small>*</small></div>
             </div>
         </div>
         </div>
@@ -83,7 +83,7 @@
               <p class="label">Property State</p>
               <div class="i-panel">
                   <select class="form-control drop-d input-effect" (change)="changeCountry($event.target.value)" formControlName="property_state">
-                      <!-- <option  *ngFor="let list of propertyState; let i = index" value="{{list.id}}">{{list.name}}</option> -->
+                    \<option value="">Select</option>
                       <option  *ngFor ="let count of countryList">{{count.name}}  </option>
                   </select>
                   <span class="focus-border"><i></i></span>
@@ -98,7 +98,7 @@
               <p class="label">Property City</p>
               <div class="i-panel">
                   <select class="form-control drop-d input-effect" formControlName="property_city">
-                      <!-- <option  *ngFor="let list of propertyList; let i = index" value="{{list.id}}">{{list.name}}</option> -->
+                    <option value="">Select</option>
                       <option *ngFor ="let city of cities">{{city}} </option>
                   </select>
                   <span class="focus-border"><i></i></span>
@@ -112,18 +112,17 @@
 
       <div class="row">
         <div class="col-xl-6">
-          <div class="i-login">
+          <!-- <div class="i-login">
             <p class="label">Request Type</p>
             <div class="i-panel">
                 <select class="form-control drop-d input-effect" formControlName="reuest_type">
-                    <!-- <option  *ngFor="let list of propertyList; let i = index" value="{{list.id}}">{{list.name}}</option> -->
                 </select>
                 <span class="focus-border"><i></i></span>
             </div>
             <div *ngIf="(submitted || f.reuest_type.touched) && f.reuest_type.errors" class="error">
                 <div [hidden]="!f.reuest_type.errors.required">select Property City<small>*</small></div>
             </div>
-        </div>
+        </div> -->
         </div>
         <div class="col-xl-6">
           <br>
@@ -131,18 +130,18 @@
           <p class="l-header-hint">Do you want to be contacted by whatsApp?
             <span class="float-right">
                 <label class="pure-material-radio">
-                    <input type="radio" checked="checked" formControlName="via_phone" name="via_phone" value='yes'>
+                    <input type="radio" checked="checked" formControlName="via_wp" name="via_wp" value='yes'>
                     <span>Yes</span>
             </label>
         
             <label class="pure-material-radio">
-                    <input type="radio" name="via_phone" formControlName="via_phone" value="no">
+                    <input type="radio" name="via_wp" formControlName="via_wp" value="no">
                     <span>No</span>
                 </label>
             </span>
         </p><br>
         <div class="l-button text-right">
-          <button type="button" class="btn btn-success ripple" (click)="enquiry()">Submit <i class="fas fa-paper-plane"></i></button>
+          <button type="button" class="btn btn-success ripple" (click)="sendHomeLoan()">Submit <i class="fas fa-paper-plane"></i></button>
       </div>
         </div>
         </div>

@@ -724,13 +724,13 @@ export class HomeLoanComponent implements OnInit {
     this.enquiryForm = this.formBuilder.group({
       name: ["", Validators.required ],
       email: ["", [Validators.required, Validators.email]],
-      super_course_id: ["", Validators.required ],
+      resident_type: ["", Validators.required ],
       property_state: ["", Validators.required ],
       property_city: ["", Validators.required ],
-      reuest_type: ["", Validators.required ],
+    //   reuest_type: ["", Validators.required ],
       phone: [null, [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
       // enquiry: ["", Validators.required ],
-      via_phone: [""],
+      via_wp: [""],
     })
   }
 
@@ -747,7 +747,7 @@ export class HomeLoanComponent implements OnInit {
     this.cities = this.countryList.find((con) => con.name == count).cities;
   }
 
-  public enquiry(){
+  public sendHomeLoan(){
     console.log(this.enquiryForm.value);
     this.submitted = true;
     if (this.enquiryForm.invalid) {

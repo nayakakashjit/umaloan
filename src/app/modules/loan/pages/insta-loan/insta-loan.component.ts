@@ -27,7 +27,14 @@ export class InstaLoanComponent implements OnInit {
 
   ngOnInit() {
     console.log('instaloan');
-    
+  };
+
+  public sendInstaLoan(){
+    console.log(this.enquiryForm.value);
+    this.submitted = true;
+    if (this.enquiryForm.invalid) {
+     return;
+   }
   }
 
 }

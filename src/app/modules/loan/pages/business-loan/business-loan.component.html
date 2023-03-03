@@ -63,15 +63,15 @@
           <div class="i-login">
             <p class="label">Type Of Employment</p>
             <div class="i-panel">
-                <select class="form-control drop-d input-effect" formControlName="super_course_id">
+                <select class="form-control drop-d input-effect" formControlName="emp_type">
                   <option value="">Select</option>
                     <option  value="ri" selected>Self-Employed</option>
                     <option  value="nri">Salaried</option>
                 </select>
                 <span class="focus-border"><i></i></span>
             </div>
-            <div *ngIf="(submitted || f.super_course_id.touched) && f.super_course_id.errors" class="error">
-                <div [hidden]="!f.super_course_id.errors.required">select Type Of Employment<small>*</small></div>
+            <div *ngIf="(submitted || f.emp_type.touched) && f.emp_type.errors" class="error">
+                <div [hidden]="!f.emp_type.errors.required">select Type Of Employment<small>*</small></div>
             </div>
         </div>
         </div>
@@ -121,15 +121,15 @@
           <div class="i-login">
             <p class="label">Current Account (Y/N)</p>
             <div class="i-panel">
-                <select class="form-control drop-d input-effect" formControlName="reuest_type">
+                <select class="form-control drop-d input-effect" formControlName="current_ac">
                   <option value="">Select</option>
                   <option value="yes">Yes </option>
                   <option value="No">No</option>
                 </select>
                 <span class="focus-border"><i></i></span>
             </div>
-            <div *ngIf="(submitted || f.reuest_type.touched) && f.reuest_type.errors" class="error">
-                <div [hidden]="!f.reuest_type.errors.required">select Y/N<small>*</small></div>
+            <div *ngIf="(submitted || f.current_ac.touched) && f.current_ac.errors" class="error">
+                <div [hidden]="!f.current_ac.errors.required">select Y/N<small>*</small></div>
             </div>
         </div>
         </div>
@@ -139,18 +139,18 @@
           <p class="l-header-hint">GST Active ?
             <span class="float-right">
                 <label class="pure-material-radio">
-                    <input type="radio" checked="checked" formControlName="via_phone" name="via_phone" value='yes'>
+                    <input type="radio" checked="checked" formControlName="active_gst" name="active_gst" value='yes'>
                     <span>Yes</span>
             </label>
         
             <label class="pure-material-radio">
-                    <input type="radio" name="via_phone" formControlName="via_phone" value="no">
+                    <input type="radio" name="active_gst" formControlName="active_gst" value="no">
                     <span>No</span>
                 </label>
             </span>
         </p><br>
         <div class="l-button text-right">
-          <button type="button" class="btn btn-success ripple" (click)="enquiry()">Submit <i class="fas fa-paper-plane"></i></button>
+          <button type="button" class="btn btn-success ripple" (click)="sendBusnessLoan()">Submit <i class="fas fa-paper-plane"></i></button>
       </div>
         </div>
         </div>
