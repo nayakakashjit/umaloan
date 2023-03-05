@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router  } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  
+ public selectedValue: string;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor( private router:Router) {
   }
 
+  ngOnInit() {
+    this.modo()
+  }
+
+  public modo(value: string  = '/loan/home-loan'){
+    this.selectedValue = value;
+  }
+
+  public navigate() {
+    this.router.navigate([this.selectedValue]);
+  }
 }
