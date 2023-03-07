@@ -295,3 +295,44 @@ input[type="number"] {
   .single-arrow {width:100%;}
   .arrow-num:after {display:none;}
 }
+
+/* Document section */
+
+.doc-bg {
+  background-color: #fff;
+  padding: 20px 0 20px 0;
+}
+
+.l-img-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.doc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.doc li {
+  line-height: 1.5;
+  text-indent: -30px;
+  padding: 8px 0 8px 30px;
+  list-style: none;
+  font-size: 20px;
+}
+
+.doc li:before {
+  float: left;
+  display: block;
+  content: '\2605';
+  color: #00a65a;
+  margin: 0 30px 0 0;
+}
+
+.doc p {
+  font-size: 0.85em;
+  margin: 40px 0 0 0;
+}

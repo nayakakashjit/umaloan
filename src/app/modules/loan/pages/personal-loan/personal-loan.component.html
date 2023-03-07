@@ -11,6 +11,87 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="loanPanel">
+    <p class="l-header">Personal Loan Enquiry</p>
+    <p class="l-header-hint">Please be specific of the enquiry you want to submit in this Enquiry Form, so we can return to you
+      <br>fast with the information you are looking for. Thank you!</p>
+    <form name="form"  [formGroup]="enquiryForm" (keyup.enter)="enquiry()">
+      <div class="row">
+          <div class="col-xl-6">
+              <div class="i-login">
+                  <p class="label">Full Name</p>
+                  <div class="i-panel">
+                      <input class="input-effect" type="text" placeholder="" formControlName="name">
+                      <span class="focus-border"><i></i></span>
+                  </div>
+                  <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="error">
+                      <div [hidden]="!f.name.errors.required">Full Name is required<small>*</small></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-6">
+              <div class="i-login">
+                  <p class="label">Email ID</p>
+                  <div class="i-panel">
+                      <input class="input-effect" type="text" placeholder="" formControlName="email">
+                      <span class="focus-border"><i></i></span>
+                  </div>
+                  <div *ngIf="(submitted || f.email.touched) && f.email.errors" class="error">
+                      <div [hidden]="!f.email.errors.required">Email is required<small>*</small></div>
+                      <div [hidden]="!f.email.errors.email">Email must be a valid email Address.</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Mobile Number</p>
+            <div class="i-panel">
+                <input class="input-effect" type="number" formControlName="phone">
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.phone.touched) && f.phone.errors" class="error">
+                <div [hidden]="!f.phone.errors.required">Phone is required<small>*</small></div>
+                <div [hidden]="!f.phone.errors.pattern">Phone number not valid.</div>
+            </div>
+        </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Loan Amount</p>
+             <div class="i-panel">
+                <input class="input-effect" type="number" formControlName="amount">
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.amount.touched) && f.amount.errors" class="error">
+                <div [hidden]="!f.amount.errors.required">Please enter amount<small>*</small></div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+      <div class="row">
+        <div class="col-xl-6">
+        </div>
+        <div class="col-xl-6">
+          <br>
+          <br>
+        <div class="l-button text-right">
+          <button type="button" class="btn btn-success ripple" (click)="sendInstaLoan()">Submit <i class="fas fa-paper-plane"></i></button>
+      </div>
+        </div>
+        </div>
+  </form>
+</div>
+  </div>
+  <div class="col-md-2"></div>
+
+</div>
+
 <div class="container-fluid">
   <div class="doc-bg">
     <p class="l-header">Documents Required</p>

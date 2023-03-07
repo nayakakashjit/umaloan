@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/core/services/api/api.service';
 
 @Component({
   selector: 'app-insta-loan',
@@ -12,6 +13,7 @@ export class InstaLoanComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private apiservice:ApiService,
   ) {
     this.enquiryForm = this.formBuilder.group({
       name: ["", Validators.required ],
@@ -26,10 +28,20 @@ export class InstaLoanComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('instaloan');
+    // TODO document why this method 'ngOnInit' is empty
   };
 
   public sendInstaLoan(){
+    this.apiservice.post('/sendFormData', this.enquiryForm.value).subscribe(
+      (res)=> {
+        console.log('Res', res);
+        
+      },
+      (error)=> {
+        console.log('error', error);
+        
+      }
+    )
     console.log(this.enquiryForm.value);
     this.submitted = true;
     if (this.enquiryForm.invalid) {
