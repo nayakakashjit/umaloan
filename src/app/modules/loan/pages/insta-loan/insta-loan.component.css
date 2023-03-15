@@ -220,6 +220,11 @@ input[type="number"] {
   color: #fff;
   text-align: center;
   margin-bottom: 2%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 52px;
 }
 
 .arrow-area {
@@ -282,11 +287,19 @@ input[type="number"] {
     margin-top: 10px;
   margin-bottom:10px;
 }
-.arrow-content p{font-weight:200;   font-size: 15px;
+.arrow-content p{font-weight:200;   font-size: 14px;
 }
 
 @media only screen and (max-width:767px){
   .arrow-area {flex-direction:column;}
   .single-arrow {width:100%;}
   .arrow-num:after {display:none;}
+}
+
+.emi-box h2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 52px;
 }

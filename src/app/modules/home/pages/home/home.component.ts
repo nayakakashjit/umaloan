@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     //   image: '../../assets/images/banner/personal_loan_banner.jpg'
     // },
     //  {
-    //   image: '../../assets/images/banner/loan_banner.jpg'
+    //   image: '../../assets/images/banner/pLoan.png'
     // },
      {
       image: '../../assets/images/banner/home_banner.jpg'

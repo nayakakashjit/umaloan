@@ -74,8 +74,84 @@
         </div>
         </div>
 
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Official Email ID</p>
+              <div class="i-panel">
+                  <input class="input-effect" type="text" placeholder="" formControlName="officialemail">
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.officialemail.touched) && f.officialemail.errors" class="error">
+                  <div [hidden]="!f.officialemail.errors.required">Email is required<small>*</small></div>
+                  <div [hidden]="!f.officialemail.errors.officialemail">Email must be a valid email Address.</div>
+              </div>
+          </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Pan Number</p>
+              <div class="i-panel">
+                  <input class="input-effect" type="text" formControlName="pan">
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.pan.touched) && f.pan.errors" class="error">
+                  <div [hidden]="!f.pan.errors.required">Pan is required<small>*</small></div>
+                  <div [hidden]="!f.pan.errors.pattern">Pan number not valid.</div>
+              </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Net Salary</p>
+              <div class="i-panel">
+                  <input class="input-effect" type="number" formControlName="salary">
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.salary.touched) && f.salary.errors" class="error">
+                  <div [hidden]="!f.salary.errors.required">Salary is required<small>*</small></div>
+                  <div [hidden]="!f.salary.errors.pattern">Salary number not valid.</div>
+              </div>
+          </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Location</p>
+              <div class="i-panel">
+                  <input class="input-effect" type="text" placeholder="" formControlName="location">
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.location.touched) && f.location.errors" class="error">
+                  <div [hidden]="!f.location.errors.required">Location Name is required<small>*</small></div>
+              </div>
+          </div>
+          </div>
+        </div>
+
       <div class="row">
         <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Select Bank</p>
+            <div class="i-panel">
+                <select class="form-control drop-d input-effect"  formControlName="selected_bank">
+                  <option value="">Select</option>
+                  <option  value="Hdfc Bank">Hdfc Bank</option>
+                  <option  value="Axis Bank">Axis Bank</option>
+                  <option  value="Idfc Bank">Idfc Bank</option>
+                  <option  value="Tata Finance">Tata Finance</option>
+                  <option  value="Bajaj Finance">Bajaj Finance</option>
+                  <option  value="Yes Bank">Yes Bank</option>
+                  <option  value="ICICI Bank">ICICI Bank</option>
+                </select>
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.selected_bank.touched) && f.selected_bank.errors" class="error">
+                <div [hidden]="!f.selected_bank.errors.required">select bank<small>*</small></div>
+            </div>
+        </div>
         </div>
         <div class="col-xl-6">
           <br>
@@ -91,7 +167,7 @@
   <div class="col-md-2"></div>
 
 </div>
-
+<br>
 <div class="container-fluid">
   <div class="doc-bg">
     <p class="l-header">Documents Required</p>

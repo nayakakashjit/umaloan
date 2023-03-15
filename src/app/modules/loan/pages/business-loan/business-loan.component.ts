@@ -730,7 +730,7 @@ export class BusinessLoanComponent implements OnInit {
       property_city: ["", Validators.required ],
       current_ac: ["", Validators.required ],
       phone: [null, [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
-      // enquiry: ["", Validators.required ],
+      selected_bank: ["", Validators.required ],
       active_gst: [""],
     })
   }

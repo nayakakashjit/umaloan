@@ -1,0 +1,255 @@
+<div class="container-fluid m-p-0">
+  <div class="sec-banner" [ngStyle]="{'background' : 'url(assets/images/homeloan/bg-homeloan-desktop.jpg)'}">
+    <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <h1>Credit Card</h1>
+      <h3>Save more by choosing the right credit card</h3>
+      <p>* Terms & Conditions Apply</p>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="loanPanel">
+    <p class="l-header">Check Your Pre-Qualified Offers</p>
+    <p class="l-header-hint">Please be specific of the enquiry you want to submit in this Enquiry Form, so we can return to you
+      <br>fast with the information you are looking for. Thank you!</p>
+    <form name="form"  [formGroup]="enquiryForm" (keyup.enter)="enquiry()">
+      <div class="row">
+          <div class="col-xl-6">
+              <div class="i-login">
+                  <p class="label">User Name</p>
+                  <div class="i-panel">
+                      <input class="input-effect" type="text" placeholder="" formControlName="name">
+                      <span class="focus-border"><i></i></span>
+                  </div>
+                  <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="error">
+                      <div [hidden]="!f.name.errors.required">User Name is required<small>*</small></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-6">
+              <div class="i-login">
+                  <p class="label">Email ID</p>
+                  <div class="i-panel">
+                      <input class="input-effect" type="text" placeholder="" formControlName="email">
+                      <span class="focus-border"><i></i></span>
+                  </div>
+                  <div *ngIf="(submitted || f.email.touched) && f.email.errors" class="error">
+                      <div [hidden]="!f.email.errors.required">Email is required<small>*</small></div>
+                      <div [hidden]="!f.email.errors.email">Email must be a valid email Address.</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Mobile Number</p>
+            <div class="i-panel">
+                <input class="input-effect" type="number" formControlName="phone">
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.phone.touched) && f.phone.errors" class="error">
+                <div [hidden]="!f.phone.errors.required">Phone is required<small>*</small></div>
+                <div [hidden]="!f.phone.errors.pattern">Phone number not valid.</div>
+            </div>
+        </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Employment Type</p>
+            <div class="i-panel">
+                <select class="form-control drop-d input-effect" formControlName="employment_type">
+                  <option value="">Select</option>
+                    <option  value="Salaried" selected>Salaried</option>
+                    <option  value="Self Employed">Self Employed</option>
+                    <option  value="Self Employed (Dr./CA)">Self Employed (Dr./CA)</option>
+                </select>
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.employment_type.touched) && f.employment_type.errors" class="error">
+                <div [hidden]="!f.employment_type.errors.required">select your employment type<small>*</small></div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+      <div class="row">
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Gender</p>
+              <div class="i-panel">
+                  <select class="form-control drop-d input-effect"  formControlName="gender">
+                    <option value="">Select</option>
+                    <option  value="Male">Male</option>
+                    <option  value="Femail">Femail</option>
+                  </select>
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.gender.touched) && f.gender.errors" class="error">
+                  <div [hidden]="!f.gender.errors.required">select gender<small>*</small></div>
+              </div>
+          </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Pan Number</p>
+              <div class="i-panel">
+                  <input class="input-effect" type="text" formControlName="pan">
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.pan.touched) && f.pan.errors" class="error">
+                  <div [hidden]="!f.pan.errors.required">Pan is required<small>*</small></div>
+                  <div [hidden]="!f.pan.errors.pattern">Pan number not valid.</div>
+              </div>
+          </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-6">
+          <br>
+          <p class="l-header-hint">Do you have an existing credit card?
+            <span class="float-right">
+                <label class="pure-material-radio">
+                    <input type="radio" checked="checked" formControlName="ext_cc" name="ext_cc" value='yes' (click)="radioButtonChanged($event)">
+                    <span>Yes</span>
+            </label>
+        
+            <label class="pure-material-radio">
+                    <input type="radio" name="ext_cc" formControlName="ext_cc" value="no" (click)="radioButtonChanged($event)">
+                    <span>No</span>
+                </label>
+            </span>
+        </p>
+     
+        </div>
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">Select Bank</p>
+            <div class="i-panel">
+                <select class="form-control drop-d input-effect"  formControlName="selected_bank">
+                  <option value="">Select</option>
+                  <option  value="IDFC Bank">IDFC Bank</option>
+                  <option  value="SBI Bank">SBI Bank</option>
+                  <option  value="Axis Bank">Axis Bank</option>
+                </select>
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.selected_bank.touched) && f.selected_bank.errors" class="error">
+                <div [hidden]="!f.selected_bank.errors.required">select bank<small>*</small></div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="row" *ngIf="showDiv">
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Existing Credit Cards are with bank?</p>
+              <div class="i-panel">
+                  <select class="form-control drop-d input-effect"  formControlName="ext_cc_bank">
+                    <option value="">Select</option>
+                    <option  value="AMEX BANK">AMEX BANK</option>
+                    <option  value="AXIS BANK">AXIS BANK</option>
+                    <option  value="CITI BANK">CITI BANK</option>
+                    <option  value="HDFC BANK">HDFC BANK</option>
+                    <option  value="HSBC BANK">HSBC BANK</option>
+                    <option  value="ICICI BANK">ICICI BANK</option>
+                    <option  value="INDUSIND BANK">INDUSIND BANK</option>
+                    <option  value="KOTAK BANK">KOTAK BANK</option>
+                    <option  value="KOTAK BANK">KOTAK BANK</option>
+                    <option  value="SBI BANK">SBI BANK</option>
+                    <option  value="STANDARD CHARTERED BANK">STANDARD CHARTERED BANK</option>
+                    <option  value="YES BANK">YES BANK</option>
+                    <option  value="OTHER">OTHER</option>
+                  </select>
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.ext_cc_bank.touched) && f.ext_cc_bank.errors" class="error">
+                  <div [hidden]="!f.ext_cc_bank.errors.required">select bank<small>*</small></div>
+              </div>
+          </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Highest credit limit of your cards?</p>
+              <div class="i-panel">
+                  <input class="input-effect" type="number" formControlName="maxLimit">
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.maxLimit.touched) && f.maxLimit.errors" class="error">
+                  <div [hidden]="!f.maxLimit.errors.required">credit limit is required<small>*</small></div>
+              </div>
+          </div>
+          </div>
+          </div>
+
+        <div class="row">
+          <div class="col-xl-6"></div>
+          <div class="col-xl-6">
+            <div class="l-button text-right">
+              <button type="button" class="btn btn-success ripple" (click)="sendHomeLoan()">Submit <i class="fas fa-paper-plane"></i></button>
+          </div>
+          </div>
+          </div>
+  </form>
+</div>
+  </div>
+  <div class="col-md-2"></div>
+
+</div>
+<br>
+<div class="arrow-section">
+  <h2 class="">How It Works</h2>
+  <div class="arrow-area">
+    <!--single arrow-->
+    <div class="single-arrow">
+      <div class="arrow-num"><svg width="23" height="24" viewBox="0 0 23 24">
+        <g fill="none" fill-rule="evenodd">
+            <path fill="#FFF" d="M0 4.8V24h15.2V4.8H0zm8 12H4a.8.8 0 1 1 0-1.6h4a.8.8 0 1 1 0 1.6zm3.2-3.2H4A.8.8 0 1 1 4 12h7.2a.8.8 0 1 1 0 1.6zm0-4H4A.8.8 0 1 1 4 8h7.2a.8.8 0 1 1 0 1.6z"></path>
+            <path fill="#F6BC25" fill-rule="nonzero" d="M3.2 0v3.2h13.6V24h5.6V0z"></path>
+        </g>
+    </svg></div>
+      <div class="arrow-content">
+        <h3>Check Eligibility</h3>
+        <p>Fill the basic information to check your credit card eligibility</p>
+      </div>
+      </div>
+      <!--single arrow-->
+    <div class="single-arrow">
+      <div class="arrow-num"><svg width="26" height="24" viewBox="0 0 26 24">
+        <g fill="none" fill-rule="evenodd">
+            <path fill="#F6BC25" fill-rule="nonzero" d="M11.143 0h3.428v5.143h-3.428z"></path>
+            <path fill="#fff" d="M16.286 2.571v4.286H9.429V2.571H0V24h25.714V2.571h-9.428zm-2.572 18H3.43s.042-1.842 1.628-2.185c1.586-.343 1.8-1.029 1.8-1.415v-.642a3.986 3.986 0 0 1-1.286-2.958v-1.928a2.914 2.914 0 0 1 3-2.872 2.914 2.914 0 0 1 2.958 2.872v1.928a3.986 3.986 0 0 1-1.243 2.958v.642c0 .386 0 1.029 1.714 1.415a2.186 2.186 0 0 1 1.714 2.185zm7.715-3.428h-6a.857.857 0 1 1 0-1.714h6a.857.857 0 0 1 0 1.714zm-6.858-4.286c0-.473.384-.857.858-.857h4.285a.857.857 0 0 1 0 1.714H15.43a.857.857 0 0 1-.858-.857zm7.715-2.571h-6.857a.857.857 0 0 1 0-1.715h6.857a.857.857 0 0 1 0 1.715z"></path>
+        </g>
+    </svg></div>
+      <div class="arrow-content">
+        <h3>Select a Credit Card</h3>
+        <p>Choose a Credit Card which best suits your needs and lifestyle.</p>
+      </div>
+      </div>
+      <!--single arrow-->
+    <div class="single-arrow">
+      <div class="arrow-num"><svg width="24" height="26" viewBox="0 0 24 26">
+        <g fill="none" fill-rule="evenodd">
+            <circle cx="11.578" cy="14.333" r="1" fill="#9C91F2" fill-rule="nonzero"></circle>
+            <path fill="#FFF" d="M11.747 3.25C5.464 3.25.372 8.343.372 14.625S5.464 26 11.747 26c6.282 0 11.375-5.093 11.375-11.375S18.029 3.25 11.747 3.25zm.44 13.01v2.366a.61.61 0 0 1-1.218 0v-2.365a2.017 2.017 0 0 1 0-3.855v-6.92a.61.61 0 0 1 1.219 0v6.92a2.017 2.017 0 0 1 0 3.854z"></path>
+            <path fill="#F6BC25" fill-rule="nonzero" d="M13 2.502V.442a.426.426 0 0 0-.406-.44h-2.438a.426.426 0 0 0-.406.44v2.162A12.147 12.147 0 0 1 13 2.5zm7.469 3.623l.786-.786.73.731a.406.406 0 0 0 .575 0l1.016-1.015a.406.406 0 0 0 0-.575l-2.609-2.61a.406.406 0 0 0-.574 0l-1.016 1.015a.406.406 0 0 0 0 .575l.732.731-.853.847c.428.336.833.699 1.213 1.088z"></path>
+        </g>
+    </svg></div>
+      <div class="arrow-content">
+        <h3>Get Approved Instantly</h3>
+        <p>Fill in bank related additional details & get your credit card</p>
+      </div>
+      </div>
+   </div>
+    </div>
+    <br>
+    <app-partners></app-partners>
+</div>

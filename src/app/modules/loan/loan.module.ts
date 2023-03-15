@@ -8,9 +8,10 @@ import { BusinessLoanComponent } from './pages/business-loan/business-loan.compo
 import { InstaLoanComponent } from './pages/insta-loan/insta-loan.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CreditCardComponent } from './pages/credit-card/credit-card.component';
 
 @NgModule({
-  declarations: [HomeLoanComponent, PersonalLoanComponent, BusinessLoanComponent, InstaLoanComponent],
+  declarations: [HomeLoanComponent, PersonalLoanComponent, BusinessLoanComponent, InstaLoanComponent, CreditCardComponent],
   imports: [
     CommonModule,
     LoanRoutingModule,

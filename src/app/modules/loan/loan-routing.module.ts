@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BusinessLoanComponent } from './pages/business-loan/business-loan.component';
+import { CreditCardComponent } from './pages/credit-card/credit-card.component';
 import { HomeLoanComponent } from './pages/home-loan/home-loan.component';
 import { InstaLoanComponent } from './pages/insta-loan/insta-loan.component';
 import { PersonalLoanComponent } from './pages/personal-loan/personal-loan.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
     path: 'insta-loan',
     component: InstaLoanComponent,
   },
+  {
+    path: 'credit-card',
+    component: CreditCardComponent
+  }
 ];
 
 @NgModule({

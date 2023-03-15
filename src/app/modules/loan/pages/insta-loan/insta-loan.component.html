@@ -18,74 +18,150 @@
     <p class="l-header">Instant Loan Enquiry</p>
     <p class="l-header-hint">Please be specific of the enquiry you want to submit in this Enquiry Form, so we can return to you
       <br>fast with the information you are looking for. Thank you!</p>
-    <form name="form"  [formGroup]="enquiryForm" (keyup.enter)="enquiry()">
-      <div class="row">
+      <form name="form"  [formGroup]="enquiryForm" (keyup.enter)="enquiry()">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="i-login">
+                    <p class="label">Full Name</p>
+                    <div class="i-panel">
+                        <input class="input-effect" type="text" placeholder="" formControlName="name">
+                        <span class="focus-border"><i></i></span>
+                    </div>
+                    <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="error">
+                        <div [hidden]="!f.name.errors.required">Full Name is required<small>*</small></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="i-login">
+                    <p class="label">Email ID</p>
+                    <div class="i-panel">
+                        <input class="input-effect" type="text" placeholder="" formControlName="email">
+                        <span class="focus-border"><i></i></span>
+                    </div>
+                    <div *ngIf="(submitted || f.email.touched) && f.email.errors" class="error">
+                        <div [hidden]="!f.email.errors.required">Email is required<small>*</small></div>
+                        <div [hidden]="!f.email.errors.email">Email must be a valid email Address.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
           <div class="col-xl-6">
-              <div class="i-login">
-                  <p class="label">Full Name</p>
-                  <div class="i-panel">
-                      <input class="input-effect" type="text" placeholder="" formControlName="name">
-                      <span class="focus-border"><i></i></span>
-                  </div>
-                  <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="error">
-                      <div [hidden]="!f.name.errors.required">Full Name is required<small>*</small></div>
-                  </div>
+            <div class="i-login">
+              <p class="label">Mobile Number</p>
+              <div class="i-panel">
+                  <input class="input-effect" type="number" formControlName="phone">
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.phone.touched) && f.phone.errors" class="error">
+                  <div [hidden]="!f.phone.errors.required">Phone is required<small>*</small></div>
+                  <div [hidden]="!f.phone.errors.pattern">Phone number not valid.</div>
               </div>
           </div>
+          </div>
           <div class="col-xl-6">
-              <div class="i-login">
-                  <p class="label">Email ID</p>
-                  <div class="i-panel">
-                      <input class="input-effect" type="text" placeholder="" formControlName="email">
-                      <span class="focus-border"><i></i></span>
-                  </div>
-                  <div *ngIf="(submitted || f.email.touched) && f.email.errors" class="error">
-                      <div [hidden]="!f.email.errors.required">Email is required<small>*</small></div>
-                      <div [hidden]="!f.email.errors.email">Email must be a valid email Address.</div>
-                  </div>
+            <div class="i-login">
+              <p class="label">Loan Amount</p>
+               <div class="i-panel">
+                  <input class="input-effect" type="number" formControlName="amount">
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.amount.touched) && f.amount.errors" class="error">
+                  <div [hidden]="!f.amount.errors.required">Please enter amount<small>*</small></div>
               </div>
           </div>
-      </div>
-      <div class="row">
-        <div class="col-xl-6">
-          <div class="i-login">
-            <p class="label">Mobile Number</p>
-            <div class="i-panel">
-                <input class="input-effect" type="number" formControlName="phone">
-                <span class="focus-border"><i></i></span>
+          </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="i-login">
+                <p class="label">Official Email ID</p>
+                <div class="i-panel">
+                    <input class="input-effect" type="text" placeholder="" formControlName="officialemail">
+                    <span class="focus-border"><i></i></span>
+                </div>
+                <div *ngIf="(submitted || f.officialemail.touched) && f.officialemail.errors" class="error">
+                    <div [hidden]="!f.officialemail.errors.required">Email is required<small>*</small></div>
+                    <div [hidden]="!f.officialemail.errors.officialemail">Email must be a valid email Address.</div>
+                </div>
             </div>
-            <div *ngIf="(submitted || f.phone.touched) && f.phone.errors" class="error">
-                <div [hidden]="!f.phone.errors.required">Phone is required<small>*</small></div>
-                <div [hidden]="!f.phone.errors.pattern">Phone number not valid.</div>
             </div>
-        </div>
-        </div>
-        <div class="col-xl-6">
-          <div class="i-login">
-            <p class="label">Loan Amount</p>
-             <div class="i-panel">
-                <input class="input-effect" type="number" formControlName="amount">
-                <span class="focus-border"><i></i></span>
+            <div class="col-xl-6">
+              <div class="i-login">
+                <p class="label">Pan Number</p>
+                <div class="i-panel">
+                    <input class="input-effect" type="text" formControlName="pan">
+                    <span class="focus-border"><i></i></span>
+                </div>
+                <div *ngIf="(submitted || f.pan.touched) && f.pan.errors" class="error">
+                    <div [hidden]="!f.pan.errors.required">Pan is required<small>*</small></div>
+                    <div [hidden]="!f.pan.errors.pattern">Pan number not valid.</div>
+                </div>
             </div>
-            <div *ngIf="(submitted || f.amount.touched) && f.amount.errors" class="error">
-                <div [hidden]="!f.amount.errors.required">Please enter amount<small>*</small></div>
             </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="i-login">
+                <p class="label">Net Salary</p>
+                <div class="i-panel">
+                    <input class="input-effect" type="number" formControlName="salary">
+                    <span class="focus-border"><i></i></span>
+                </div>
+                <div *ngIf="(submitted || f.salary.touched) && f.salary.errors" class="error">
+                    <div [hidden]="!f.salary.errors.required">Salary is required<small>*</small></div>
+                    <div [hidden]="!f.salary.errors.pattern">Salary number not valid.</div>
+                </div>
+            </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="i-login">
+                <p class="label">Location</p>
+                <div class="i-panel">
+                    <input class="input-effect" type="text" placeholder="" formControlName="location">
+                    <span class="focus-border"><i></i></span>
+                </div>
+                <div *ngIf="(submitted || f.location.touched) && f.location.errors" class="error">
+                    <div [hidden]="!f.location.errors.required">Location Name is required<small>*</small></div>
+                </div>
+            </div>
+            </div>
+          </div>
+  
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">Select Bank</p>
+              <div class="i-panel">
+                  <select class="form-control drop-d input-effect"  formControlName="selected_bank">
+                    <option value="">Select</option>
+                    <option  value="Hdfc Bank">Hdfc Bank</option>
+                    <option  value="Axis Bank">Axis Bank</option>
+                    <option  value="Idfc Bank">Idfc Bank</option>
+                    <option  value="Tata Finance">Tata Finance</option>
+                    <option  value="Bajaj Finance">Bajaj Finance</option>
+                    <option  value="Yes Bank">Yes Bank</option>
+                    <option  value="ICICI Bank">ICICI Bank</option>
+                  </select>
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.selected_bank.touched) && f.selected_bank.errors" class="error">
+                  <div [hidden]="!f.selected_bank.errors.required">select bank<small>*</small></div>
+              </div>
+          </div>
+          </div>
+          <div class="col-xl-6">
+            <br>
+            <br>
+          <div class="l-button text-right">
+            <button type="button" class="btn btn-success ripple" (click)="sendInstaLoan()">Submit <i class="fas fa-paper-plane"></i></button>
         </div>
-        </div>
-        </div>
-
-      <div class="row">
-        <div class="col-xl-6">
-        </div>
-        <div class="col-xl-6">
-          <br>
-          <br>
-        <div class="l-button text-right">
-          <button type="button" class="btn btn-success ripple" (click)="sendInstaLoan()">Submit <i class="fas fa-paper-plane"></i></button>
-      </div>
-        </div>
-        </div>
-  </form>
+          </div>
+          </div>
+    </form>
 </div>
   </div>
   <div class="col-md-2"></div>

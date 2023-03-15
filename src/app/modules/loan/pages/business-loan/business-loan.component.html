@@ -134,25 +134,51 @@
         </div>
         </div>
         <div class="col-xl-6">
-          <br>
-          <br>
-          <p class="l-header-hint">GST Active ?
-            <span class="float-right">
-                <label class="pure-material-radio">
-                    <input type="radio" checked="checked" formControlName="active_gst" name="active_gst" value='yes'>
-                    <span>Yes</span>
-            </label>
-        
-            <label class="pure-material-radio">
-                    <input type="radio" name="active_gst" formControlName="active_gst" value="no">
-                    <span>No</span>
-                </label>
-            </span>
-        </p><br>
-        <div class="l-button text-right">
-          <button type="button" class="btn btn-success ripple" (click)="sendBusnessLoan()">Submit <i class="fas fa-paper-plane"></i></button>
-      </div>
+          <div class="i-login">
+            <p class="label">Select Bank</p>
+            <div class="i-panel">
+                <select class="form-control drop-d input-effect"  formControlName="selected_bank">
+                  <option value="">Select</option>
+                  <option  value="Idfc Bank">Idfc Bank</option>
+                  <option  value="Hdfc Bank">Hdfc Bank</option>
+                  <option  value="Tata Finance">Tata Finance</option>
+                  <option  value="Bajaj Finance">Bajaj Finance</option>
+                  <option  value="ICICI Bank">ICICI Bank</option>
+                  <option  value="Lendingkart">Lendingkart</option>
+                  <option  value="Indifi">Indifi</option>
+                  <option  value="IIFL Finance">IIFL Finance</option>
+                </select>
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.selected_bank.touched) && f.selected_bank.errors" class="error">
+                <div [hidden]="!f.selected_bank.errors.required">select bank<small>*</small></div>
+            </div>
         </div>
+
+        </div>
+        </div>
+<br>
+        <div class="row">
+          <div class="col-xl-6">
+            <p class="l-header-hint">GST Active ?
+              <span class="float-right">
+                  <label class="pure-material-radio">
+                      <input type="radio" checked="checked" formControlName="active_gst" name="active_gst" value='yes'>
+                      <span>Yes</span>
+              </label>
+          
+              <label class="pure-material-radio">
+                      <input type="radio" name="active_gst" formControlName="active_gst" value="no">
+                      <span>No</span>
+                  </label>
+              </span>
+          </p>
+          </div>
+          <div class="col-xl-6">
+            <div class="l-button text-right">
+              <button type="button" class="btn btn-success ripple" (click)="sendBusnessLoan()">Submit <i class="fas fa-paper-plane"></i></button>
+          </div>
+          </div>
         </div>
   </form>
 </div>

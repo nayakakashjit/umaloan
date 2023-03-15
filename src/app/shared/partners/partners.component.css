@@ -1,10 +1,13 @@
-
 .about-section-two {
-    margin-top: 0;
+    /* margin-top: 0;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center center;
-    padding: 0% 0 2% 0;
+    padding: 0% 0 2% 0; */
+
+    padding: 7px 0 70px;
+    background: url(../../../assets/images/partner/bg_imgdots.png) repeat center center;
+    background-size: 12px;
 }
 
 .about-section-two .left-col {
@@ -14,14 +17,15 @@
 }
 
 .about-section-two .left-col h2 {
-    font-weight: 300;
+    font-weight: 305000;
     font-size: 40px;
     margin-bottom: 30px;
+    color: #212529;
 }
 
 .about-section-two .left-col span {
-    font-style: italic;
     font-weight: 500;
+    color: #212529;
 }
 
 .about-section-two .left-col p {
@@ -39,11 +43,41 @@
     margin-top: 10%;
 }
 
+
+.gallery-items {
+    float: left;
+    position: relative;
+    cursor: pointer;
+  }
+  .gallery-items span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    color: #fff;
+    font-size: 40px;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
 .partnerimage {
-    margin-right: 22px;
+    margin: 3px 3px 0 0;
     border: 1px solid #ddd;
     height: 75px;
-    width: auto;
+    width: 200px;
+}
+
+.frame{  
+    position: relative;
+}    
+.frame img{  
+    max-height: 100%;  
+    max-width: 100%; 
+    position: absolute;  
+    top: 55px;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
 }
 
 

@@ -727,9 +727,8 @@ export class HomeLoanComponent implements OnInit {
       resident_type: ["", Validators.required ],
       property_state: ["", Validators.required ],
       property_city: ["", Validators.required ],
-    //   reuest_type: ["", Validators.required ],
+	  selected_bank: ["", Validators.required ],
       phone: [null, [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
-      // enquiry: ["", Validators.required ],
       via_wp: [""],
     })
   }
