@@ -9,14 +9,20 @@ export class HomeComponent implements OnInit {
 
   // banners: any;
   banners:any = [
-    // {
-    //   image: '../../assets/images/banner/personal_loan_banner.jpg'
-    // },
-    //  {
-    //   image: '../../assets/images/banner/pLoan.png'
-    // },
+    {
+      image: '../../assets/images/banner/Credit_Card.jpg'
+    },
      {
-      image: '../../assets/images/banner/home_banner.jpg'
+      image: '../../assets/images/banner/Home_Loan.jpg'
+    },
+     {
+      image: '../../assets/images/banner/Insta_Loan.jpg'
+    },
+    {
+      image: '../../assets/images/banner/Personal_Loan.jpg'
+    },
+    {
+      image: '../../assets/images/banner/business_loan.jpg'
     }
   ]
 

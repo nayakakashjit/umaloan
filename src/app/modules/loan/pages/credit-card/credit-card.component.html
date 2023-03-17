@@ -22,13 +22,13 @@
       <div class="row">
           <div class="col-xl-6">
               <div class="i-login">
-                  <p class="label">User Name</p>
+                  <p class="label">Full name</p>
                   <div class="i-panel">
                       <input class="input-effect" type="text" placeholder="" formControlName="name">
                       <span class="focus-border"><i></i></span>
                   </div>
                   <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="error">
-                      <div [hidden]="!f.name.errors.required">User Name is required<small>*</small></div>
+                      <div [hidden]="!f.name.errors.required">Full name is required<small>*</small></div>
                   </div>
               </div>
           </div>

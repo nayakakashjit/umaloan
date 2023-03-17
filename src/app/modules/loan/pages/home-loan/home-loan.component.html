@@ -21,13 +21,13 @@
       <div class="row">
           <div class="col-xl-6">
               <div class="i-login">
-                  <p class="label">User Name</p>
+                  <p class="label">Full name</p>
                   <div class="i-panel">
                       <input class="input-effect" type="text" placeholder="" formControlName="name">
                       <span class="focus-border"><i></i></span>
                   </div>
                   <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="error">
-                      <div [hidden]="!f.name.errors.required">User Name is required<small>*</small></div>
+                      <div [hidden]="!f.name.errors.required">Full name is required<small>*</small></div>
                   </div>
               </div>
           </div>
@@ -80,7 +80,7 @@
       <div class="row">
           <div class="col-xl-6">
             <div class="i-login">
-              <p class="label">Property State</p>
+              <p class="label">State</p>
               <div class="i-panel">
                   <select class="form-control drop-d input-effect" (change)="changeCountry($event.target.value)" formControlName="property_state">
                     \<option value="">Select</option>
@@ -89,13 +89,13 @@
                   <span class="focus-border"><i></i></span>
               </div>
               <div *ngIf="(submitted || f.property_state.touched) && f.property_state.errors" class="error">
-                  <div [hidden]="!f.property_state.errors.required">select Property State<small>*</small></div>
+                  <div [hidden]="!f.property_state.errors.required">select State<small>*</small></div>
               </div>
           </div>
           </div>
           <div class="col-xl-6">
             <div class="i-login">
-              <p class="label">Property City</p>
+              <p class="label">City</p>
               <div class="i-panel">
                   <select class="form-control drop-d input-effect" formControlName="property_city">
                     <option value="">Select</option>
@@ -104,7 +104,7 @@
                   <span class="focus-border"><i></i></span>
               </div>
               <div *ngIf="(submitted || f.property_city.touched) && f.property_city.errors" class="error">
-                  <div [hidden]="!f.property_city.errors.required">select Property City<small>*</small></div>
+                  <div [hidden]="!f.property_city.errors.required">select City<small>*</small></div>
               </div>
           </div>
           </div>
