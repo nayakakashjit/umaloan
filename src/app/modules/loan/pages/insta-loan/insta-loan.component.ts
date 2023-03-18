@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/core/services/api/api.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-insta-loan',
@@ -17,6 +18,7 @@ export class InstaLoanComponent implements OnInit {
   ) {
     this.enquiryForm = this.formBuilder.group({
       name: ["", Validators.required ],
+      company_name: ["", Validators.required ],
       location: ["", Validators.required ],
       email: ["", [Validators.required, Validators.email]],
       officialemail: ["", [Validators.required, Validators.email]],
@@ -37,21 +39,21 @@ export class InstaLoanComponent implements OnInit {
   };
 
   public sendInstaLoan(){
-    this.apiservice.post('/sendFormData', this.enquiryForm.value).subscribe(
-      (res)=> {
-        console.log('Res', res);
-        
-      },
-      (error)=> {
-        console.log('error', error);
-        
-      }
-    )
     console.log(this.enquiryForm.value);
     this.submitted = true;
     if (this.enquiryForm.invalid) {
      return;
    }
+   this.apiservice.post('/sendFormData', this.enquiryForm.value).subscribe(
+    (res)=> {
+      console.log('Res', res);
+      Swal.fire('Thank you, we have received your info', 'A customer service representative will be in touch within 24 hours', 'success')
+    },
+    (error)=> {
+      console.log('error', error);
+      
+    }
+  )
   }
 
 }

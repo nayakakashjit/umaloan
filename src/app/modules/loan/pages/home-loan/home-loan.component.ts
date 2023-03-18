@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/core/services/api/api.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-home-loan',
@@ -720,9 +722,11 @@ export class HomeLoanComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+	private apiservice:ApiService
   ) {
     this.enquiryForm = this.formBuilder.group({
       name: ["", Validators.required ],
+      company_name: ["", Validators.required ],
       email: ["", [Validators.required, Validators.email]],
       resident_type: ["", Validators.required ],
       property_state: ["", Validators.required ],
@@ -739,7 +743,7 @@ export class HomeLoanComponent implements OnInit {
 
 
   ngOnInit() {
-    this.changeCountry('Andhra Pradesh (AP)')
+    this.changeCountry('Andhra Pradesh (AP)');
   }
 
   public changeCountry(count) {
@@ -748,10 +752,21 @@ export class HomeLoanComponent implements OnInit {
 
   public sendHomeLoan(){
     console.log(this.enquiryForm.value);
-    this.submitted = true;
+	this.submitted = true;
     if (this.enquiryForm.invalid) {
-     return;
-   }
+		return;
+	};
+	Swal.fire('Thank you, we have received your info', 'A customer service representative will be in touch within 24 hours', 'success')
+	this.apiservice.post('/sendFormData', this.enquiryForm.value).subscribe(
+		(res)=> {
+		  console.log('Res', res);
+		  Swal.fire('Thank you, we have received your info', 'A customer service representative will be in touch within 24 hours', 'success')
+		},
+		(error)=> {
+		  console.log('error', error);
+		  
+		}
+	  );
   }
 
 }
