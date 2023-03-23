@@ -73,7 +73,38 @@
         </div>
         </div>
         </div>
-
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">State</p>
+              <div class="i-panel">
+                  <select class="form-control drop-d input-effect" (change)="changeCountry($event.target.value)" formControlName="property_state">
+                    <option value="">Select</option>
+                      <option  *ngFor ="let count of countryList">{{count.name}}  </option>
+                  </select>
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.property_state.touched) && f.property_state.errors" class="error">
+                  <div [hidden]="!f.property_state.errors.required">select State<small>*</small></div>
+              </div>
+          </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="i-login">
+              <p class="label">City</p>
+              <div class="i-panel">
+                  <select class="form-control drop-d input-effect" formControlName="property_city">
+                    <option value="">Select</option>
+                      <option *ngFor ="let city of cities">{{city}} </option>
+                  </select>
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.property_city.touched) && f.property_city.errors" class="error">
+                  <div [hidden]="!f.property_city.errors.required">select City<small>*</small></div>
+              </div>
+          </div>
+          </div>
+      </div>
         <div class="row">
           <div class="col-xl-6">
             <div class="i-login">

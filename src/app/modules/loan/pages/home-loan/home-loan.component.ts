@@ -756,8 +756,7 @@ export class HomeLoanComponent implements OnInit {
     if (this.enquiryForm.invalid) {
 		return;
 	};
-	Swal.fire('Thank you, we have received your info', 'A customer service representative will be in touch within 24 hours', 'success')
-	this.apiservice.post('/sendFormData', this.enquiryForm.value).subscribe(
+	this.apiservice.post('/homeloan/send', this.enquiryForm.value).subscribe(
 		(res)=> {
 		  console.log('Res', res);
 		  Swal.fire('Thank you, we have received your info', 'A customer service representative will be in touch within 24 hours', 'success')

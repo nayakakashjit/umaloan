@@ -65,8 +65,8 @@
             <div class="i-panel">
                 <select class="form-control drop-d input-effect" formControlName="resident_type">
                   <option value="">Select</option>
-                    <option  value="ri" selected>Resident Indian</option>
-                    <option  value="nri">Non Resident Indian</option>
+                    <option  value="Indian" selected>Resident Indian</option>
+                    <option  value="NRI">Non Resident Indian</option>
                 </select>
                 <span class="focus-border"><i></i></span>
             </div>
@@ -83,7 +83,7 @@
               <p class="label">State</p>
               <div class="i-panel">
                   <select class="form-control drop-d input-effect" (change)="changeCountry($event.target.value)" formControlName="property_state">
-                    \<option value="">Select</option>
+                    <option value="">Select</option>
                       <option  *ngFor ="let count of countryList">{{count.name}}  </option>
                   </select>
                   <span class="focus-border"><i></i></span>

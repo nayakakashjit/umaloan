@@ -726,19 +726,20 @@ export class BusinessLoanComponent implements OnInit {
       name: ["", Validators.required ],
       email: ["", [Validators.required, Validators.email]],
       emp_type: ["", Validators.required ],
-      property_state: ["", Validators.required ],
-      property_city: ["", Validators.required ],
+      operation: ["", Validators.required ],
+      turnover: ["", Validators.required ],
       current_ac: ["", Validators.required ],
       phone: [null, [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
       selected_bank: ["", Validators.required ],
       active_gst: [""],
+	  property_state: ["", Validators.required ],
+      property_city: ["", Validators.required ],
     })
   }
 
   get f() {
     return this.enquiryForm.controls;
   }
-
 
   ngOnInit() {
     this.changeCountry('Andhra Pradesh (AP)')

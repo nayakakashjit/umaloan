@@ -48,6 +48,38 @@
       <div class="row">
         <div class="col-xl-6">
           <div class="i-login">
+            <p class="label">State</p>
+            <div class="i-panel">
+                <select class="form-control drop-d input-effect" (change)="changeCountry($event.target.value)" formControlName="property_state">
+                  <option value="">Select</option>
+                    <option  *ngFor ="let count of countryList">{{count.name}}  </option>
+                </select>
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.property_state.touched) && f.property_state.errors" class="error">
+                <div [hidden]="!f.property_state.errors.required">select State<small>*</small></div>
+            </div>
+        </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="i-login">
+            <p class="label">City</p>
+            <div class="i-panel">
+                <select class="form-control drop-d input-effect" formControlName="property_city">
+                  <option value="">Select</option>
+                    <option *ngFor ="let city of cities">{{city}} </option>
+                </select>
+                <span class="focus-border"><i></i></span>
+            </div>
+            <div *ngIf="(submitted || f.property_city.touched) && f.property_city.errors" class="error">
+                <div [hidden]="!f.property_city.errors.required">select City<small>*</small></div>
+            </div>
+        </div>
+        </div>
+    </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="i-login">
             <p class="label">Mobile Number</p>
             <div class="i-panel">
                 <input class="input-effect" type="number" formControlName="phone">
@@ -82,7 +114,7 @@
             <div class="i-login">
               <p class="label">Number Of Years In Operation</p>
               <div class="i-panel">
-                  <select class="form-control drop-d input-effect" (change)="changeCountry($event.target.value)" formControlName="property_state">
+                  <select class="form-control drop-d input-effect" (change)="changeCountry($event.target.value)" formControlName="operation">
                     <option value="">Select</option>
                       <option  value="0-1">0 to 1 year</option>
                       <option  value="1-2">1 to 2 year</option>
@@ -91,8 +123,8 @@
                   </select>
                   <span class="focus-border"><i></i></span>
               </div>
-              <div *ngIf="(submitted || f.property_state.touched) && f.property_state.errors" class="error">
-                  <div [hidden]="!f.property_state.errors.required">select Years In Operation<small>*</small></div>
+              <div *ngIf="(submitted || f.operation.touched) && f.operation.errors" class="error">
+                  <div [hidden]="!f.operation.errors.required">select Years In Operation<small>*</small></div>
               </div>
           </div>
           </div>
@@ -100,7 +132,7 @@
             <div class="i-login">
               <p class="label">Business Turnover</p>
               <div class="i-panel">
-                  <select class="form-control drop-d input-effect" formControlName="property_city">
+                  <select class="form-control drop-d input-effect" formControlName="turnover">
                   <option value="">Select</option>
                   <option value="0 - 25 Lakhs">0 - 25 Lakhs </option>
                   <option value="25 lakhs - 50 lakhs">25 lakhs - 50 lakhs </option>
@@ -109,8 +141,8 @@
                   </select>
                   <span class="focus-border"><i></i></span>
               </div>
-              <div *ngIf="(submitted || f.property_city.touched) && f.property_city.errors" class="error">
-                  <div [hidden]="!f.property_city.errors.required">select Business Turnover<small>*</small></div>
+              <div *ngIf="(submitted || f.turnover.touched) && f.turnover.errors" class="error">
+                  <div [hidden]="!f.turnover.errors.required">select Business Turnover<small>*</small></div>
               </div>
           </div>
           </div>
