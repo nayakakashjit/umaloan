@@ -150,6 +150,16 @@
           </div>
           <div class="col-xl-6">
             <div class="i-login">
+              <p class="label">Company Name</p>
+              <div class="i-panel">
+                  <input class="input-effect" type="text" placeholder="" formControlName="company_name">
+                  <span class="focus-border"><i></i></span>
+              </div>
+              <div *ngIf="(submitted || f.company_name.touched) && f.company_name.errors" class="error">
+                  <div [hidden]="!f.company_name.errors.required">Company name is required<small>*</small></div>
+              </div>
+          </div>
+            <!-- <div class="i-login">
               <p class="label">Location</p>
               <div class="i-panel">
                   <input class="input-effect" type="text" placeholder="" formControlName="location">
@@ -158,7 +168,7 @@
               <div *ngIf="(submitted || f.location.touched) && f.location.errors" class="error">
                   <div [hidden]="!f.location.errors.required">Location Name is required<small>*</small></div>
               </div>
-          </div>
+          </div> -->
           </div>
         </div>
 
@@ -185,27 +195,19 @@
         </div>
         </div>
         <div class="col-xl-6">
-          <div class="i-login">
-            <p class="label">Company Name</p>
-            <div class="i-panel">
-                <input class="input-effect" type="text" placeholder="" formControlName="company_name">
-                <span class="focus-border"><i></i></span>
-            </div>
-            <div *ngIf="(submitted || f.company_name.touched) && f.company_name.errors" class="error">
-                <div [hidden]="!f.company_name.errors.required">Company name is required<small>*</small></div>
-            </div>
+          <div class="l-button text-right">
+            <br><br>
+            <button type="button" class="btn btn-success ripple" (click)="sendPersonalLoan()">Submit <i class="fas fa-paper-plane"></i></button>
         </div>
         </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-xl-6"></div>
           <div class="col-xl-6">
-            <div class="l-button text-right">
-              <button type="button" class="btn btn-success ripple" (click)="sendInstaLoan()">Submit <i class="fas fa-paper-plane"></i></button>
+          
           </div>
-          </div>
-        </div>
+        </div> -->
   </form>
 </div>
   </div>
@@ -337,5 +339,5 @@
   </div>
 </div>
 </div>
-
 </div>
+<ngx-spinner size="medium" [type]="typeSelected"></ngx-spinner>

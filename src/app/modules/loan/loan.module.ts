@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { LoanRoutingModule } from './loan-routing.module';
 import { HomeLoanComponent } from './pages/home-loan/home-loan.component';
@@ -16,7 +17,8 @@ import { CreditCardComponent } from './pages/credit-card/credit-card.component';
     CommonModule,
     LoanRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    NgxSpinnerModule
   ]
 })
 export class LoanModule { }

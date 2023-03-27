@@ -21,6 +21,7 @@
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
     "ng5-slider": "^1.2.6",
+    "ngx-spinner": "^7.2.0",
     "rxjs": "~6.3.3",
     "sass": "^1.59.3",
     "sweetalert2": "^11.7.3",

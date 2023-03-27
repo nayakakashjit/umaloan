@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/core/services/api/api.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-credit-card',
@@ -13,6 +14,7 @@ export class CreditCardComponent implements OnInit {
   public enquiryForm : FormGroup;
   public submitted: boolean = false;
   public showDiv : boolean = true;
+  public typeSelected: string;
   public countryList: Array<any> = [
     {
       name: 'Andhra Pradesh (AP)',
@@ -721,7 +723,7 @@ export class CreditCardComponent implements OnInit {
   ];
   public cities: Array<any>;
 
-  constructor( private formBuilder: FormBuilder, private apiservice:ApiService,) { 
+  constructor( private formBuilder: FormBuilder, private apiservice:ApiService,private spinnerService: NgxSpinnerService) { 
     this.enquiryForm = this.formBuilder.group({
       name: ["", Validators.required ],
       company_name: ["", Validators.required ],
@@ -736,7 +738,8 @@ export class CreditCardComponent implements OnInit {
       ext_cc_bank: ["", Validators.required],
       property_state: ["", Validators.required ],
       property_city: ["", Validators.required ],
-    })
+    });
+	this.typeSelected = 'ball-fussion';
   }
 
   ngOnInit() {
@@ -747,19 +750,24 @@ export class CreditCardComponent implements OnInit {
   }
 
   public sendCreditCard(){
-    console.log(this.enquiryForm.value);
     this.submitted = true;
     if (this.enquiryForm.invalid) {
      return;
    };
-   this.apiservice.post('/sendFormData', this.enquiryForm.value).subscribe(
+   this.spinnerService.show();
+   this.apiservice.post('/creditCard/send', this.enquiryForm.value).subscribe(
     (res)=> {
-      console.log('Res', res);
+		this.spinnerService.hide();
       Swal.fire('Thank you, we have received your info', 'A customer service representative will be in touch within 24 hours', 'success')
     },
     (error)=> {
+		this.spinnerService.hide();
       console.log('error', error);
-      
+	  Swal.fire({
+		icon: 'error',
+		title: 'Oops...',
+		text: 'Something went wrong!',
+		})
     }
   )
   }
