@@ -795,7 +795,6 @@ export class InstaLoanComponent implements OnInit {
     this.enquiryForm = this.formBuilder.group({
       name: ["", Validators.required],
       company_name: ["", Validators.required],
-      location: ["", Validators.required],
       email: ["", [Validators.required, Validators.email]],
       officialemail: ["", [Validators.required, Validators.email]],
       amount: [null, Validators.required],

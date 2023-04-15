@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  server_url: 'https://us-central1-akashjitmailer-ac937.cloudfunctions.net/app'
+  server_url: 'http://127.0.0.1:3000'
 };
 
 /*
