@@ -430,6 +430,7 @@ li.drop-down>a:hover+.drop-down-ul,
     }
     .navbar-btn-login li {
         margin-left: 0px;
+        display: none;
     }
     .btn-login-reg:hover {
         color: #fff;
@@ -437,6 +438,7 @@ li.drop-down>a:hover+.drop-down-ul,
     .btn-login-reg:focus {
         box-shadow: none;
     }
+
 }
 
 @media (min-width: 767px) {

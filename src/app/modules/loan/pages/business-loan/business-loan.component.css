@@ -349,3 +349,11 @@ input[type="number"] {
   font-size: 40px;
   line-height: 52px;
 }
+
+@media (min-width: 320px) and (max-width: 720px) {
+  .loanPanel {
+    padding: 15px;
+    margin-bottom: 16%;
+    margin-top: -5%;
+}
+}
