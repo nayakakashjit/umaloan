@@ -757,7 +757,7 @@ export class CreditCardComponent implements OnInit {
    this.spinnerService.show();
    this.apiservice.post('/creditCard/send', this.enquiryForm.value).subscribe(
     (res)=> {
-		this.spinnerService.hide();
+	  this.spinnerService.hide();
       Swal.fire('Thank you, we have received your info', 'A customer service representative will be in touch within 24 hours', 'success')
     },
     (error)=> {

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent, FooterComponent } from './shared';
 import { SharedModule } from './shared/shared.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
