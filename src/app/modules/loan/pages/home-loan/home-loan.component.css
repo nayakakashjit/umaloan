@@ -311,7 +311,7 @@ input[type="number"] {
   z-index: 2;
 }
 .quick-link-container .quick-link a:before {
-  content: "UMA Loan";
+  content: "Umaloan";
   display: block;
   font-size: 0.9rem;
 }

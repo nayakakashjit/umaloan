@@ -23,7 +23,7 @@
                   <!--Column3-->
                   <div class="ccavenue">
                       <img src="assets/images/Logo/logo.jpg" class="img-fluid" alt="logo">
-                     <!-- <h1> Uma Loan</h1> -->
+                     <!-- <h1> Umaloan</h1> -->
                   </div>
               </div>
           </div>
@@ -93,46 +93,75 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-            <div class="headline"><span>Please check your eligibility</span></div>
           <button type="button" id="closeModalButton"  class="close" data-dismiss="modal">&times;</button>
         </div>
         
         <!-- Modal body -->
         <div class="modal-body">
             <div class="fcontainer">
-                <form class="form-container" #eligibilityForm="ngForm" (ngSubmit)="checkEligibility(eligibilityForm.value)">
-                    <div class="form-line success">
-                        <input type="text" class="form-input" name="name" ngModel>
-                        <label class="top">Name</label>
+                <div class="form_wrapper">
+                    <div class="form_container">
+                      <div class="title_container">
+                        <h2>Please check your eligibility</h2>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="">
+                          <form [formGroup]="enquiryForm">
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                              <input type="text" name="name" placeholder="Name" formControlName="name" required />
+                            </div>
+                            <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="error">
+                              <div [hidden]="!f.name.errors.required">Full name is required<small>*</small></div>
+                          </div>
+
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-mobile"></i></span>
+                                <input type="email" name="email" placeholder="Mobile Number" formControlName="phone" required />
+                              </div>
+                              <div *ngIf="(submitted || f.phone.touched) && f.phone.errors" class="error">
+                                <div [hidden]="!f.phone.errors.required">Phone is required<small>*</small></div>
+                                <div [hidden]="!f.phone.errors.pattern">Phone number not valid.</div>
+                            </div>
+
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                              <input type="email" name="email" placeholder="Email" formControlName="email" required />
+                            </div>
+                            <div *ngIf="(submitted || f.email.touched) && f.email.errors" class="error">
+                                <div [hidden]="!f.email.errors.required">Email is required<small>*</small></div>
+                                <div [hidden]="!f.email.errors.email">Email must be a valid email Address.</div>
+                            </div>
+<!-- 
+                            <div class="input_field"> <span><i class="fa">&#xf156;</i></span>
+                                <input type="text" name="name" placeholder="Loan amaount" />
+                              </div> -->
+
+                            <div class="row clearfix">
+                              <div class="col_half">
+                                <div class="input_field"> <span><i class="fa">&#xf156;</i></span>
+                                  <input type="text" name="name" placeholder="Loan amaount" formControlName="amount" required/>
+                                </div>
+                                <div *ngIf="(submitted || f.amount.touched) && f.amount.errors" class="error">
+                                    <div [hidden]="!f.amount.errors.required">Loan amount is required<small>*</small></div>
+                                    <div [hidden]="!f.amount.errors.pattern">Loan amount not valid.</div>
+                                </div>
+                              </div>
+                              <div class="col_half">
+                                <div class="input_field radio_option">
+                                    <input type="radio" name="emp_type" id="rd1" formControlName="emp_type" value='Salaried'>
+                                    <label for="rd1">Salaried</label>
+                                    <input type="radio" name="emp_type" id="rd2" formControlName="emp_type" value='Self Employed'>
+                                    <label for="rd2">Self Employed</label>
+                                    </div>
+                                    <div *ngIf="(submitted || f.emp_type.touched) && f.emp_type.errors" class="error">
+                                        <div [hidden]="!f.emp_type.errors.required">Select employment type<small>*</small></div>
+                                    </div>
+                              </div>
+                            </div>
+                            <input class="button" type="submit" value="Submit" (click)="checkEligibility()" />
+                          </form>
+                        </div>
+                      </div>
                     </div>
-                    <div class="form-line">
-                        <input type="text" class="form-input" name="email" ngModel required>
-                        <label class="top">Your email *</label>
-                        <div class="error-label">Field is required!</div>
-                    </div>
-                    <div class="form-line">
-                        <input type="text" class="form-input" name="phone" ngModel required>
-                        <label class="top">Phone number *</label>
-                        <div class="error-label">Field is required!</div>
-                    </div>  
-                    <div class="form-line">
-                        <input type="text" class="form-input" name="salary" ngModel required>
-                        <label class="top">Net salary</label>
-                    </div>  
-                    <div class="form-line">
-                        <input type="text" class="form-input" name="amount" ngModel required>
-                        <label class="top">Loan amount *</label>
-                        <div class="error-label">Field is required!</div>
-                    </div>  
-                    <div class="form-line">
-                        <input type="text" class="form-input" name="pan" ngModel required>
-                        <label class="top">Pan Number *</label>
-                        <div class="error-label">Field is required!</div>
-                    </div>
-                    <div class="subBtn">
-                        <input class="btn btn-success" type="submit" value="submit">
-                    </div>
-                </form>
+                  </div>
             </div>
         </div>        
       </div>
